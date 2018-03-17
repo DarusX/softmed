@@ -71,8 +71,11 @@
             </div>
         </nav>
         @extends('layouts.errors')
-
-        @yield('content')
+        <div class="container">
+            <div class="row">
+                @yield('content')
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

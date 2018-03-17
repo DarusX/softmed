@@ -1,6 +1,10 @@
 <?php
 
 
+Route::resources([
+    'medicamento' => 'MedicamentoController'
+]);
+
 Route::get('/','HomeController@index');
 
 
