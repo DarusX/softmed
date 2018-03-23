@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\medicamento;
 use Illuminate\Http\Request;
 use App\http\requests\createMedicamentoRequest;
+use App\http\requests\updateMedicamentoRequest;
+
 
 class MedicamentoController extends Controller
 {
@@ -15,20 +17,18 @@ class MedicamentoController extends Controller
 public function MainMedicamentos()
    {
      $medicamentos = medicamento::orderBy('id', 'asc')->paginate(20);
-    return view('indexMedicamentos')->with(['medicamentos' => $medicamentos]);
+    return view('medicamento.index')->with(['medicamentos' => $medicamentos]);
    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-public function store(createMedicamentoRequest $request)
-{
-   $medicamento = medicamento::create($request->only('nombre', 'compuesto', 'presentacion'));
+public function create()
+    {
+        return view('medicamento.create');
 
-   return redirect()->route('indexMedicamentos');
-   dd($request->all());
-}
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,6 +36,11 @@ public function store(createMedicamentoRequest $request)
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function store(createMedicamentoRequest $request)
+    {
+        $medicamento = Medicamento::create ($request->only('nombre','compuesto','presentacion'));
+        return redirect()->route('indexMedicamentos');
+    }
 
     /**
      * Display the specified resource.
@@ -43,10 +48,6 @@ public function store(createMedicamentoRequest $request)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -54,9 +55,9 @@ public function store(createMedicamentoRequest $request)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Medicamento $medicamento)
     {
-        //
+        return view('medicamento.edit')->with(['medicamento'=>$medicamento]);
     }
 
     /**
@@ -66,11 +67,13 @@ public function store(createMedicamentoRequest $request)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-public function update(medicamento $medicamento, Request $request)
+public function update(medicamento $medicamento, UpdateMedicamentoRequest $request)
 {
    $medicamento->update(
       $request->only('nombre','compuesto', 'presentacion')
    );
+
+   return redirect()->route('indexMedicamentos');
 }
 
 
