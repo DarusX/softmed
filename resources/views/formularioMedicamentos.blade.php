@@ -16,7 +16,7 @@
         </div>
     
         <div class="panel-body">
-        Componente activo
+        Compuesto activo
         <input type="text" name="compuesto" class="form-control" value="{{old('compuesto')}}" >
         </div>
 

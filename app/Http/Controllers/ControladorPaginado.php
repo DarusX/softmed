@@ -18,11 +18,7 @@ class ControladorPaginado extends Controller
    	return view('home');
    }
 //////////////////////////////////////////////////
-public function MainMedicamentos()
-   {
-     $medicamentos = medicamento::orderBy('nombre', 'asc')->paginate(20);
-   	return view('indexMedicamentos')->with(['medicamentos' => $medicamentos]);
-   }
+
 ////////////////////////////////////////////////////////
 
 public function formMedicamentos()
@@ -30,26 +26,10 @@ public function formMedicamentos()
       return view('formularioMedicamentos');
    }
 //////////////////////////////////////////////////////////
-public function store(createMedicamentoRequest $request)
-{
-   $medicamento = medicamento::create($request->only('nombre', 'compuesto', 'presentacion'));
 
-   return redirect()->route('indexMedicamentos');
-   dd($request->all());
-}
 ///////////////////////////////////////////////////
-public function delete(medicamento $medicamento)
-{
-   $medicamento->delete();
-   return redirect()->route('indexMedicamentos');
-}
+
 ///////////////////////////////////////////////////////////////////
-public function update(medicamento $medicamento, Request $request)
-{
-   $medicamento->update(
-      $request->only('nombre','compuesto', 'presentacion')
-   );
-}
 
 
 }

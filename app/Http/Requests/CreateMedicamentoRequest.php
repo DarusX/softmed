@@ -26,7 +26,7 @@ class CreateMedicamentoRequest extends FormRequest
         return 
         [    
             'nombre' =>'required',
-            'componente' => 'required'
+            'compuesto' => 'required'
         ];
     }
 }

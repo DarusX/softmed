@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\medicamento;
 use Illuminate\Http\Request;
-use App\Medicamento;
+use App\http\requests\createMedicamentoRequest;
 
 class MedicamentoController extends Controller
 {
@@ -12,22 +12,23 @@ class MedicamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('medicamento.index')->with([
-            'medicamentos' => Medicamento::all()
-        ]);
-    }
-
+public function MainMedicamentos()
+   {
+     $medicamentos = medicamento::orderBy('id', 'asc')->paginate(20);
+    return view('indexMedicamentos')->with(['medicamentos' => $medicamentos]);
+   }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('medicamento.create');
-    }
+public function store(createMedicamentoRequest $request)
+{
+   $medicamento = medicamento::create($request->only('nombre', 'compuesto', 'presentacion'));
+
+   return redirect()->route('indexMedicamentos');
+   dd($request->all());
+}
 
     /**
      * Store a newly created resource in storage.
@@ -35,11 +36,6 @@ class MedicamentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        Medicamento::create($request->all());
-        return redirect()->route('medicamento.index');
-    }
 
     /**
      * Display the specified resource.
@@ -70,10 +66,13 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+public function update(medicamento $medicamento, Request $request)
+{
+   $medicamento->update(
+      $request->only('nombre','compuesto', 'presentacion')
+   );
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,8 +80,9 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+public function delete(medicamento $medicamento)
+{
+   $medicamento->delete();
+   return redirect()->route('indexMedicamentos');
+}
 }
