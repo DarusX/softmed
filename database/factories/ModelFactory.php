@@ -31,3 +31,11 @@ $factory->define(App\medicamento::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\estudio::class, function (Faker\Generator $faker) {
+    return [
+        'estudio' => $faker->name,
+    ];
+});
+
+
+

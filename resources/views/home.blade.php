@@ -17,7 +17,9 @@
                     Bienvenido
 
                <div class="panel-body">
-               <a href="{{ url('/indexMedicamentos') }}">Medicamentos</a>
+               <p> <a href="{{ url('/indexMedicamentos') }}">Medicamentos</a> </p>
+               <a href="{{ url('/indexEstudios') }}">Estudios</a>
+
                </div> 
 
 
