@@ -25,9 +25,7 @@ class CreateEstudioRequest extends FormRequest
     {
         return 
         [
-            
-            'estudio' => 'required';
-
+            'estudio' =>'required'
         ];
     }
 }

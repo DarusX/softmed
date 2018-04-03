@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\medicamento;
-use Illuminate\Http\Request;
-use App\http\requests\createMedicamentoRequest;
+
 
 
 class ControladorPaginado extends Controller

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\estudio;
 use Illuminate\Http\Request;
-
+use App\http\requests\createEstudioRequest;
+use App\http\requests\EditEstudioRequest;
 
 class EstudioController extends Controller
 {
@@ -34,22 +35,12 @@ class EstudioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createEstudioRequest $request)
     {
-$estudio = Estudio::create ($request->only('estudio'));
+        $estudio = Estudio::create ($request->only('estudio'));
         return redirect()->route('indexEstudios');    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
+  
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,7 +59,7 @@ $estudio = Estudio::create ($request->only('estudio'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(estudio $estudio, Request $request)
+    public function update(estudio $estudio, EditEstudioRequest $request)
     {
       $estudio->update(
       $request->only('estudio')

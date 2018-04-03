@@ -32,7 +32,7 @@
                     <a href="{{ route('edit_medicamento', ['medicamento' => $medicamento->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
                     <form action="{{route('delete_medicamento', ['medicamento' => $medicamento->id])}}" method="POST">
                         {{ csrf_field()}} {{ method_field('DELETE') }}
-                        <button type="submit" class='btn btn-danger'>Delete</button>
+                        <button type="submit" class='btn btn-danger'>Borrar</button>
                     </form>
                 </td>
             </tr>

@@ -13,6 +13,12 @@
             </tr>
         </thead>
          
+         <tfoot>
+
+    <th colspan=4> {{ $estudios->render() }} </th>
+      
+  </tfoot>
+       
         <tbody>
             @foreach($estudios as $estudio)
             <tr>
@@ -22,7 +28,7 @@
                     <a href="{{ route('edit_estudio', ['estudio' => $estudio->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
                     <form action="{{route('delete_estudio', ['estudio' => $estudio->id])}}" method="POST">
                         {{ csrf_field()}} {{ method_field('DELETE') }}
-                        <button type="submit" class='btn btn-danger'>Delete</button>
+                        <button type="submit" class='btn btn-danger'>Borrar</button>
                     </form>
                 </td>
             </tr>
