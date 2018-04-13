@@ -21,12 +21,9 @@ Route::name('update_medicamento')->put('/medicamento/{medicamento}', 'Medicament
 Route::name('delete_medicamento')->delete('/indexMedicamentos/{medicamento}', 'MedicamentoController@delete');
 
 //Rutas de estudios
-Route::name('indexEstudios')->get('/indexEstudios', 'EstudioController@index');
-Route::name('create_estudio')->get('/indexEstudios/create','EstudioController@create');
-Route::name('estudio_store')->post('/indexEstudios','EstudioController@store');
-Route::name('edit_estudio')->get('/indexEstudios/{estudio}/edit', 'EstudioController@edit');
-Route::name('update_estudio')->put('/estudio/{estudio}', 'EstudioController@update');
-Route::name('delete_estudio')->delete('/indexEstudios/{estudio}', 'EstudioController@delete');
+Route::resources([
+	'estudio'=>'EstudioController'
+]);
 
 
 }

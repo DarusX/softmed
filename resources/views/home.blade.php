@@ -18,7 +18,7 @@
 
                <div class="panel-body">
                <p> <a href="{{ url('/indexMedicamentos') }}">Medicamentos</a> </p>
-               <a href="{{ url('/indexEstudios') }}">Estudios</a>
+               <a href="{{route('estudio.index')}}">Estudios</a>
 
                </div> 
 

@@ -3,7 +3,7 @@
     <h1>
         <strong>Estudios</strong>
     </h1>
-   <a href="{{route('create_estudio')}}" class="btn btn-primary" role="button">Nuevo</a>
+   <a href="{{route('estudio.create')}}" class="btn btn-primary" role="button">Nuevo</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -25,8 +25,8 @@
                 <td class="text-center">{{ $estudio->id }}</td>
                 <td class="text-center">{{ $estudio->estudio }}</td>
                 <td class="text-center">
-                    <a href="{{ route('edit_estudio', ['estudio' => $estudio->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
-                    <form action="{{route('delete_estudio', ['estudio' => $estudio->id])}}" method="POST">
+                    <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
+                    <form action="{{route('estudio.destroy', ['estudio' => $estudio->id])}}" method="POST">
                         {{ csrf_field()}} {{ method_field('DELETE') }}
                         <button type="submit" class='btn btn-danger'>Borrar</button>
                     </form>

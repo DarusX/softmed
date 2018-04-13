@@ -1,15 +1,14 @@
 @extends('layouts.app') @section('content')
 <div class="col-sm-12">
   
-  <form action="{{route('estudio_store')}}" method="post">
+  <form action="{{route('estudio.store')}}" method="post">
    {{ csrf_field()}}
 
-  
     <legend>Estudio</legend>
   
   
-    <div class="form-group">
-      <label for="">Estudio</label>
+    <div class="form-group {{$errors->has('estudio')? ' has-error':''}}">
+      <label class="control-label" for="">Estudio</label>
       <input type="text" name="estudio" class="form-control" value="{{old('estudio')}}">
     </div>
   

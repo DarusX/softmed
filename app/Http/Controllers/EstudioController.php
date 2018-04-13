@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use App\estudio;
 use Illuminate\Http\Request;
-use App\http\requests\createEstudioRequest;
-use App\http\requests\EditEstudioRequest;
 
 class EstudioController extends Controller
 {
@@ -15,8 +13,9 @@ class EstudioController extends Controller
      */
     public function index()
     {
-    $estudios = estudio::orderBy('id', 'asc')->paginate(20);
-    return view('estudio.index')->with(['estudios' => $estudios]);
+        return view('estudio.index')->with([
+            'estudios' => Estudio::paginate(20)
+        ]);
     }
 
     /**
@@ -35,10 +34,13 @@ class EstudioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createEstudioRequest $request)
+    public function store(Request $request)
     {
-        $estudio = Estudio::create ($request->only('estudio'));
-        return redirect()->route('indexEstudios');    }
+        $this->validate($request,[
+            'estudio'=>'required']);
+
+        Estudio::create($request->all());
+        return redirect()->route('estudio.index');    }
 
   
     /**
@@ -49,7 +51,8 @@ class EstudioController extends Controller
      */
     public function edit(estudio $estudio)
     {
-        return view('estudio.edit')->with(['estudio'=>$estudio]);
+        return view('estudio.edit')->with([
+            'estudio'=>$estudio]);
     }
 
     /**
@@ -59,13 +62,13 @@ class EstudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(estudio $estudio, EditEstudioRequest $request)
+    public function update(Request $request, $id)
     {
-      $estudio->update(
-      $request->only('estudio')
-   );
+         $this->validate($request,[
+            'estudio'=>'required']);
 
-   return redirect()->route('indexEstudios');
+        Estudio::find($id)->update($request->all());
+        return redirect()->route('estudio.index');
     }
 
     /**
@@ -74,9 +77,9 @@ class EstudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete(estudio $estudio)
+    public function destroy($id)
     {
- $estudio->delete();
-   return redirect()->route('indexEstudios');
+        Estudio::destroy($id);
+        return redirect()->route('estudio.index');
     }
 }
