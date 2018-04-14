@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 <div class="col-sm-12">
     <h1>
         <strong>Estudios</strong>
@@ -27,19 +28,18 @@
                 <td class="text-center">
                 <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" ><i class="fas fa-pencil-alt"></i></a>
                 <a class="destroy" href="{{route('estudio.destroy', $estudio->id)}}"><i class="fas fa-trash-alt"></i></a>
-                <script>
-                  $(".destroy>i").on("click",function(){
-                    event.prevent
-                  });
-                </script>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
+@endsection
+@section('scripts')
+<script>
+    $(".destroy i").on("click",function(){
+        event.preventDefault();
 
-
-
-
+    });
+</script>
 @endsection
