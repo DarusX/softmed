@@ -40,6 +40,17 @@
     $(".destroy i").on("click",function(){
         event.preventDefault();
 
+       $.ajax({
+        url: $(this).attr("href"),
+        method: "POST",
+        data: {
+            _method: "DESTROY",
+            _token: "{{csrf_token()}}"
+        },
+        success: function(data){
+            window.reload();
+        }
+       });
     });
 </script>
 @endsection
