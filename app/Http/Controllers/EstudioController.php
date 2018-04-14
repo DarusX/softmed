@@ -82,4 +82,10 @@ class EstudioController extends Controller
         Estudio::destroy($id);
         return redirect()->route('estudio.index');
     }
+
+    //Crear metodo show porque no ejecuta la funcion destroy en forma de icono :D
+     public function show($id)
+    {
+    
+    }
 }

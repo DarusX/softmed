@@ -25,11 +25,13 @@
                 <td class="text-center">{{ $estudio->id }}</td>
                 <td class="text-center">{{ $estudio->estudio }}</td>
                 <td class="text-center">
-                    <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
-                    <form action="{{route('estudio.destroy', ['estudio' => $estudio->id])}}" method="POST">
-                        {{ csrf_field()}} {{ method_field('DELETE') }}
-                        <button type="submit" class='btn btn-danger'>Borrar</button>
-                    </form>
+                <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" ><i class="fas fa-pencil-alt"></i></a>
+                <a class="destroy" href="{{route('estudio.destroy', $estudio->id)}}"><i class="fas fa-trash-alt"></i></a>
+                <script>
+                  $(".destroy>i").on("click",function(){
+                    event.prevent
+                  });
+                </script>
                 </td>
             </tr>
             @endforeach
