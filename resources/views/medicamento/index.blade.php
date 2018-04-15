@@ -3,7 +3,7 @@
     <h1>
         <strong>Medicamentos</strong>
     </h1>
-    <a href="{{route('create_medicamento')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('medicamento.create')}}" class="btn btn-primary" role="button">Nuevo</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -29,8 +29,8 @@
 
 
                 <td class="text-center">
-                    <a href="{{ route('edit_medicamento', ['medicamento' => $medicamento->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
-                    <form action="{{route('delete_medicamento', ['medicamento' => $medicamento->id])}}" method="POST">
+                    <a href="{{route('medicamento.edit', ['medicamento' => $medicamento->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
+                    <form action="{{route('medicamento.destroy', ['medicamento' => $medicamento->id])}}" method="POST">
                         {{ csrf_field()}} {{ method_field('DELETE') }}
                         <button type="submit" class='btn btn-danger'>Borrar</button>
                     </form>

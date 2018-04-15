@@ -40,7 +40,8 @@ class EstudioController extends Controller
             'estudio'=>'required']);
 
         Estudio::create($request->all());
-        return redirect()->route('estudio.index');    }
+        return redirect()->route('estudio.index');    
+    }
 
   
     /**

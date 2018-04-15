@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use App\medicamento;
 use Illuminate\Http\Request;
-use App\http\requests\createMedicamentoRequest;
-use App\http\requests\updateMedicamentoRequest;
 
 
 class MedicamentoController extends Controller
@@ -14,17 +12,18 @@ class MedicamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-public function MainMedicamentos()
+    public function index()
    {
-     $medicamentos = medicamento::orderBy('id', 'asc')->paginate(20);
-    return view('medicamento.index')->with(['medicamentos' => $medicamentos]);
+     return view('medicamento.index')->with([
+            'medicamentos' => Medicamento::paginate(20)
+        ]);
    }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-public function create()
+    public function create()
     {
         return view('medicamento.create');
 
@@ -36,10 +35,15 @@ public function create()
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(createMedicamentoRequest $request)
+    public function store(Request $request)
     {
-        $medicamento = Medicamento::create ($request->only('nombre','compuesto','presentacion'));
-        return redirect()->route('indexMedicamentos');
+        $this->validate($request,[
+            'nombre'=>'required',
+            'compuesto'=>'required',
+            'presentacion'=>'required']);
+        
+        Medicamento::create($request->all());
+        return redirect()->route('medicamento.index');
     }
 
    
@@ -51,7 +55,8 @@ public function create()
      */
     public function edit(Medicamento $medicamento)
     {
-        return view('medicamento.edit')->with(['medicamento'=>$medicamento]);
+        return view('medicamento.edit')->with([
+        'medicamento'=>$medicamento]);
     }
 
     /**
@@ -61,14 +66,16 @@ public function create()
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-public function update(medicamento $medicamento, UpdateMedicamentoRequest $request)
-{
-   $medicamento->update(
-      $request->only('nombre','compuesto', 'presentacion')
-   );
-
-   return redirect()->route('indexMedicamentos');
-}
+    public function update(Request $request, $id)
+    {
+        $this->validate($request,[
+            'nombre'=>'required',
+            'compuesto'=>'required',
+            'presentacion'=>'required']);
+        
+        Medicamento::find($id)->update($request->all());
+        return redirect()->route('medicamento.index');
+    }
 
 
     /**
@@ -77,9 +84,14 @@ public function update(medicamento $medicamento, UpdateMedicamentoRequest $reque
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-public function delete(medicamento $medicamento)
-{
-   $medicamento->delete();
-   return redirect()->route('indexMedicamentos');
-}
+    public function destroy($id)
+    {
+        Medicamento::destroy($id);
+        return redirect()->route('medicamento.index');
+    }
+
+    public function show($id)
+    {
+        //////////////////////////////////////////////////
+    }
 }
