@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\paciente;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -13,7 +13,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        return view('paciente.index');
+        return view('paciente.index')->with([
+            'pacientes' => Paciente::paginate(20)
+        ]);
     }
 
     /**
@@ -23,8 +25,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view('paciente.create');    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +35,16 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nombre'=>'required',
+            'paterno'=>'required',
+            'materno'=>'required',
+            'naciemiento'=>'required',
+            'curp'=>'required',
+            'domicilio'=>'required']);
+        
+        Paciente::create($request->all());
+        return redirect()->route('paciente.index');
     }
 
     /**
@@ -56,7 +66,8 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('paciente.edit')->with([
+        'paciente'=>$paciente]);
     }
 
     /**
@@ -68,7 +79,16 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nombre'=>'required',
+            'paterno'=>'required',
+            'materno'=>'required',
+            'naciemiento'=>'required',
+            'curp'=>'required',
+            'domicilio'=>'required']);
+
+        Paciente::find($id)->update($request->all());
+        return redirect()->route('paciente.index');
     }
 
     /**
@@ -79,6 +99,7 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Paciente::destroy($id);
+        return redirect()->route('paciente.index');
     }
 }

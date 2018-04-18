@@ -37,5 +37,17 @@ $factory->define(App\estudio::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\paciente::class, function (Faker\Generator $faker) {
+    return [
+        'nombre' => $faker->name,
+        'paterno' => $faker->name,
+        'materno' => $faker->name,
+        'nacimiento' => $faker->date,
+        'curp' => $faker->sentence,
+        'domicilio' => $faker->address,
+    ];
+});
+
+
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.app') @section('content')
 <div class="col-sm-12">
   
-  <form action="{{route('medicamento_store')}}" method="post">
+  <form action="{{route('paciente.store')}}" method="post">
    {{ csrf_field()}}
 
   

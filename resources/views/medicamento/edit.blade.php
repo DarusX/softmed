@@ -1,7 +1,7 @@
 @extends('layouts.app') @section('content')
 <div class="col-sm-12">
   
-  <form action="{{route('update_medicamento', ['Medicamento' => $medicamento->id])}}" method="post">
+  <form action="{{route('medicamento.update', ['Medicamento' => $medicamento->id])}}" method="post">
    {{ csrf_field()}}
    {{ method_field('PUT')}}
   
