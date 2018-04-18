@@ -5,7 +5,7 @@
    {{ csrf_field()}}
 
   
-    <legend>Medicamento</legend>
+    <legend>Paciente</legend>
   
   
     <div class="form-group">
