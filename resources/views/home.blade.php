@@ -14,11 +14,12 @@
                         </div>
                     @endif
 
-                    Bienvenido
+                    Bienvenidos
 
                <div class="panel-body">
                <p> <a href="{{route('medicamento.index')}}">Medicamentos</a> </p>
                <a href="{{route('estudio.index')}}">Estudios</a>
+                <a href="{{route('paciente.index')}}">Pacientes</a>
 
                </div> 
 

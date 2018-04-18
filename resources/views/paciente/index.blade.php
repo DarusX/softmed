@@ -1,8 +1,8 @@
 @extends('layouts.app') @section('content')
 <div class="col-sm-12">
-    <h1>
+    <h2>
         <strong>Pacientes</strong>
-    </h1>
+    </h2>
     
 
 
