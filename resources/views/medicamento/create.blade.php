@@ -5,21 +5,21 @@
    {{ csrf_field()}}
 
   
-    <legend>Medicamento</legend>
+    <legend>Crear Medicamento</legend>
   
   
-    <div class="form-group">
-      <label for="">Nombre</label>
+    <div class="form-group {{$errors->has('nombre')? ' has-error':''}}">
+      <label class="control-label" for="">Nombre</label>
       <input type="text" name="nombre" class="form-control" value="{{old('nombre')}}">
     </div>
   
-    <div class="form-group">
-      <label for="">Componente activo</label>
+    <div class="form-group {{$errors->has('compuesto')? ' has-error':''}}">
+      <label class="control-label" for="">Componente activo</label>
       <input type="text" name="compuesto" class="form-control" value="{{old('compuesto')}}">
     </div>
   
-    <div class="form-group">
-      <label for="">Presentación</label>
+    <div class="form-group {{$errors->has('presentacion')? ' has-error':''}}">
+      <label class="control-label" for="">Presentación</label>
       <input type="text" name="presentacion" class="form-control" value="{{old('presentacion')}}">
     </div>
   
@@ -28,5 +28,6 @@
     </div>
   
   </form>
+
 </div>
 @endsection

@@ -5,11 +5,11 @@
    {{ csrf_field()}}
    {{ method_field('PUT')}}
   
-    <legend>Estudio</legend>
+    <legend>Editar Estudio</legend>
   
   
-    <div class="form-group">
-      <label for="">Estudio</label>
+    <div class="form-group {{$errors->has('estudio')? ' has-error':''}}">
+      <label class="control-label" for="">Estudio</label>
       <input type="text" name="estudio" class="form-control" value="{{$estudio->estudio}}">
     </div>
  

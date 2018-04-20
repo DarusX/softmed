@@ -53,7 +53,7 @@ class MedicamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicamento $medicamento)
+    public function edit(medicamento $medicamento)
     {
         return view('medicamento.edit')->with([
         'medicamento'=>$medicamento]);

@@ -22,9 +22,14 @@ Route::resources([
 	'estudio'=>'EstudioController'
 ]);
 
-//Rutas de estudios
+//Rutas de pacientes
 Route::resources([
 	'paciente'=>'PacienteController'
+]);
+
+//Rutas de enfermedades
+Route::resources([
+	'enfermedad'=>'EnfermedadController'
 ]);
 
 }

@@ -31,22 +31,14 @@
                 <td class="text-center">{{ $paciente->nacimiento }}</td>
                 <td class="text-center">{{ $paciente->curp }}</td>
                 <td class="text-center">{{ $paciente->domicilio }}</td>
-
-
                 <td class="text-center">
-                    <a href="{{route('paciente.edit', ['paciente' => $paciente->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
-                    <form action="{{route('paciente.destroy', ['paciente' => $paciente->id])}}" method="POST">
-                        {{ csrf_field()}} {{ method_field('DELETE') }}
-                        <button type="submit" class='btn btn-danger'>Borrar</button>
-                    </form>
+                <a href="{{ route('paciente.edit', ['paciente' => $paciente->id])}}" ><i class="fas fa-pencil-alt"></i></a>
+                <a class="destroy" href="{{route('paciente.destroy', $paciente->id)}}"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
-
-
-
 
 @endsection

@@ -26,13 +26,10 @@
                 <td class="text-center">{{ $medicamento->nombre }}</td>
                 <td class="text-center">{{ $medicamento->compuesto }}</td>
                 <td class="text-center">{{ $medicamento->presentacion }}</td>
-
-
                 <td class="text-center">
-                    <a href="{{route('medicamento.edit', ['medicamento' => $medicamento->id])}}" class="btn btn-success btn-sm" role="button">Editar</a>
-                    <form action="{{route('medicamento.destroy', ['medicamento' => $medicamento->id])}}" method="POST">
-                        {{ csrf_field()}} {{ method_field('DELETE') }}
-                        <button type="submit" class='btn btn-danger'>Borrar</button>
+                <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}" ><i class="fas fa-pencil-alt"></i></a>
+                <a class="destroy" href="{{route('medicamento.destroy', $medicamento->id)}}"><i class="fas fa-trash-alt"></i></a>
+                </td>
                     </form>
                 </td>
             </tr>
@@ -40,8 +37,5 @@
         </tbody>
     </table>
 </div>
-
-
-
 
 @endsection

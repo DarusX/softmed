@@ -4,7 +4,7 @@
   <form action="{{route('estudio.store')}}" method="post">
    {{ csrf_field()}}
 
-    <legend>Estudio</legend>
+    <legend>Crear Estudio</legend>
   
   
     <div class="form-group {{$errors->has('estudio')? ' has-error':''}}">

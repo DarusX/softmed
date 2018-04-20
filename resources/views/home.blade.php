@@ -20,6 +20,7 @@
                <p> <a href="{{route('medicamento.index')}}">Medicamentos</a> </p>
                <p><a href="{{route('estudio.index')}}">Estudios</a></p>
                <p><a href="{{route('paciente.index')}}">Pacientes</a></p>
+               <p><a href="{{route('enfermedad.index')}}">Enfermedades</a></p>
 
                </div> 
 
