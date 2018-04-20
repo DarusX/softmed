@@ -5,7 +5,11 @@
    {{ csrf_field()}}
 
   
+<<<<<<< HEAD
     <legend>Crear Paciente</legend>
+=======
+    <legend>Paciente</legend>
+>>>>>>> ecbcebf1e287f5eea94aa83db230452e780111f9
   
   
     <div class="form-group {{$errors->has('nombre')? ' has-error':''}}">
