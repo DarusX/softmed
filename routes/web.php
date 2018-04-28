@@ -32,5 +32,10 @@ Route::resources([
 	'enfermedad'=>'EnfermedadController'
 ]);
 
+//Rutas de recetas
+Route::resources([
+	'receta'=>'RecetaController'
+]);
+
 }
 );

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading" align="center">Dashboard</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -21,7 +21,7 @@
                <p><a href="{{route('estudio.index')}}">Estudios</a></p>
                <p><a href="{{route('paciente.index')}}">Pacientes</a></p>
                <p><a href="{{route('enfermedad.index')}}">Enfermedades</a></p>
-
+               <p><a href="{{route('receta.index')}}">Recetas</a></p>
                </div> 
 
 
