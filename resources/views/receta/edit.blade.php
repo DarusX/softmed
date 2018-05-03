@@ -1,16 +1,16 @@
 @extends('layouts.app') @section('content')
 <div class="col-sm-12">
   
-  <form action="{{route('enfermedad.update', $enfermedad->id)}}" method="post">
+  <form action="{{route('receta.update', $receta->id)}}" method="post">
    {{ csrf_field()}}
    {{ method_field('PUT')}}
   
-    <legend>Editar Enfermedad</legend>
+    <legend>Editar Receta</legend>
   
   
-    <div class="form-group {{$errors->has('enfermedad')? ' has-error':''}}">
-      <label class="control-label" for="">Enfermedad</label>
-      <input type="text" name="enfermedad" class="form-control" value="{{$enfermedad->enfermedad}}">
+    <div class="form-group {{$errors->has('fecha')? ' has-error':''}}">
+      <label class="control-label" for="">Fecha</label>
+      <input type="date" name="fecha" class="form-control" value="{{$fecha->fecha}}">
     </div>
  
     <div class="form-group">

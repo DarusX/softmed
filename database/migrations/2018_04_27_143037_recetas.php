@@ -16,6 +16,7 @@ class Recetas extends Migration
          Schema::create('recetas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fecha');
+            $table->integer('paciente_id')->unsigned();
             $table->timestamps();
         });
     }

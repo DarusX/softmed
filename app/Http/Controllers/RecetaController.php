@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\receta;
 
 class RecetaController extends Controller
 {
@@ -13,7 +14,9 @@ class RecetaController extends Controller
      */
     public function index()
     {
-        return view('receta.index');
+        return view('receta.index')->with([
+            'recetas' => Receta::paginate(20)
+            ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class RecetaController extends Controller
      */
     public function create()
     {
-        //
+        return view('receta.create');
     }
 
     /**
@@ -34,7 +37,12 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+             $this->validate($request,[
+            'fecha'=>'required',
+            'paciente_id'=>'required']);
+        
+        Medicamento::create($request->all());
+        return redirect()->route('receta.index');
     }
 
     /**
@@ -54,9 +62,10 @@ class RecetaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(receta $receta)
     {
-        //
+        return view('receta.edit')->with([
+        'receta'=>$receta]);
     }
 
     /**
@@ -68,7 +77,13 @@ class RecetaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'fecha'=>'required',
+            'id_paciente'=>'required'
+        ]);
+        
+        Receta::find($id)->update($request->all());
+        return redirect()->route('receta.index');
     }
 
     /**
@@ -79,6 +94,7 @@ class RecetaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Receta::destroy($id);
+        return redirect()->route('receta.index');
     }
 }
