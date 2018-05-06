@@ -76,6 +76,8 @@
         <div class="container">
             <div class="row">
                 @yield('content')
+                {{ csrf_field() }}
+
             </div>
         </div>
   

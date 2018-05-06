@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\receta;
+use Illuminate\Support\Facades\Redirect;
 
 class RecetaController extends Controller
 {

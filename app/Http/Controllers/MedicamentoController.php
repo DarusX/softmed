@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\medicamento;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Redirect;
 
 class MedicamentoController extends Controller
 {

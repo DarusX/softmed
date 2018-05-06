@@ -27,7 +27,8 @@
                 <td class="text-center">{{ $receta->id_paciente }}</td>
 
                 <a href="{{ route('receta.edit', ['receta' => $receta->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a class="destroy" href="{{route('receta.destroy', $receta->id)}}"><i class="fas fa-trash-alt"></i></a>
+                <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
+            @include('receta.modal')
                 </td>
             </tr>
             @endforeach

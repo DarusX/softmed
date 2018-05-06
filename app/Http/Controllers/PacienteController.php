@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\paciente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PacienteController extends Controller
 {
