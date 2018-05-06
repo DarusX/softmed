@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\estudio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
 
 class EstudioController extends Controller
 {

@@ -27,30 +27,14 @@
                 <td class="text-center">{{ $estudio->estudio }}</td>
                 <td class="text-center">
                 <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a class="destroy" href="{{route('estudio.destroy', $estudio->id)}}"><i class="fas fa-trash-alt"></i></a>
-                </td>
+                <a href="" data-target="#modal-delete-{{$estudio->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
+            @include('estudio.modal')
+            </td>
             </tr>
+
+
             @endforeach
         </tbody>
     </table>
 </div>
-@endsection
-@section('scripts')
-<script>
-    $(".destroy i").on("click",function(){
-        event.preventDefault();
-
-       $.ajax({
-        url: $(this).attr("href"),
-        method: "POST",
-        data: {
-            _method: "DESTROY",
-            _token: "{{csrf_token()}}"
-        },
-        success: function(data){
-            window.reload();
-        }
-       });
-    });
-</script>
 @endsection
