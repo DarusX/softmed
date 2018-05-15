@@ -1,5 +1,6 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog"  id="modal-delete-{{$enfermedad->id}}">
-	{{Form::Open(array('action'=>array('EnfermedadController@destroy',$enfermedad->id),'method'=>'delete'))}}
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog"  id="modal-delete-{{$consulta->id}}">
+	
+	{{Form::Open(array('action'=>array('ConsultaController@destroy',$consulta->id),'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -7,10 +8,10 @@
 				aria-label="Close">
                      <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Eliminar Enfermedad</h4>
+                <h4 class="modal-title">Eliminar Consulta</h4>
 			</div>
 			<div class="modal-body">
-				<p>¿Desea realmente eliminar la enfermedad?</p>
+				<p>¿Desea realmente eliminar la Consulta?</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

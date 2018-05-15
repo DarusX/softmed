@@ -21,6 +21,7 @@
                <p><a href="{{route('estudio.index')}}">Estudios</a></p>
                <p><a href="{{route('paciente.index')}}">Pacientes</a></p>
                <p><a href="{{route('enfermedad.index')}}">Enfermedades</a></p>
+               <p><a href="{{route('consulta.index')}}">Consultas</a></p>
                <p><a href="{{route('receta.index')}}">Recetas</a></p>
                </div> 
 

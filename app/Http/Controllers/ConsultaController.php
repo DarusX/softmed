@@ -14,7 +14,9 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        //
+        return view('consulta.index')->with([
+            'consultas' => Consulta::paginate(20)
+            ]);
     }
 
     /**
@@ -25,7 +27,8 @@ class ConsultaController extends Controller
     public function create($id)
     {
         return view('consulta.create')->with([
-            'paciente'=> Paciente::find($id)]);
+            'paciente'=> Paciente::find($id)
+        ]);
     }
 
     /**
@@ -81,6 +84,7 @@ class ConsultaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Consulta::destroy($id);
+        return redirect()->route('consulta.index');
     }
 }

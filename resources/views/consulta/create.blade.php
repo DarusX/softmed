@@ -8,7 +8,7 @@
   
   
      
-      <input type="hidden" name="paciente_id" value="{{$paciente->id}}">
+    <input type="hidden" name="paciente_id" value="{{$paciente->id}}">
 
     <div class="form-group {{$errors->has('fecha')? ' has-error':''}}">
       <label class="control-label" for="">Fecha</label>

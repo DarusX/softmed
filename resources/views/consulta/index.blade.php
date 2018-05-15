@@ -2,33 +2,33 @@
 @section('content')
 <div class="col-sm-12">
     <h1>
-        <strong>Enfermedades</strong>
+        <strong>Consultas</strong>
     </h1>
-   <a href="{{route('enfermedad.create')}}" class="btn btn-primary" role="button">Nuevo</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Enfermedad</th>
-                <th class="text-center">Acciones</th>
+                <th class="text-left">Paciente</th>
+                <th class="text-left">Fecha</th>
+                <th class="text-left">Hora</th>
             </tr>
         </thead>
          
          <tfoot>
 
-    <th colspan=4> {{ $enfermedades->render() }} </th>
+    <th colspan=4> {{ $consultas->render() }} </th>
       
   </tfoot>
        
         <tbody>
-            @foreach($enfermedades as $enfermedad)
+            @foreach($consultas as $consulta)
             <tr>
-                <td class="text-center">{{ $enfermedad->id }}</td>
-                <td class="text-center">{{ $enfermedad->enfermedad }}</td>
+                <td class="text-left">{{$consulta->paciente->nombreCompleto}}</td>
+                <td class="text-left">{{ $consulta->fecha }}</td>
+                <td class="text-left">{{ $consulta->hora }}</td>
                 <td class="text-center">
-                <a href="{{ route('enfermedad.edit', ['enfermedad' => $enfermedad->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$enfermedad->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
-            @include('enfermedad.modal')
+                <a href="" data-target="#modal-delete-{{$consulta->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>
+
+                @include('consulta.modal')
                 </td>
             </tr>
             @endforeach
