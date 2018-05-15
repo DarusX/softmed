@@ -10,32 +10,17 @@ Auth::routes();
 
 
 Route::group(['middleware' => 'auth'], function(){
-Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/home', 'HomeController@index')->name('home');
 
-//Rutas de medicamentos
-Route::resources([
-	'medicamento'=>'MedicamentoController'
-]);
+	Route::resources([
+		'estudio'=>'EstudioController',
+		'paciente'=>'PacienteController',
+		'enfermedad'=>'EnfermedadController',
+		'receta'=>'RecetaController',
+		'medicamento'=>'MedicamentoController',
+		'consulta'=>'ConsultaController'
+		]);
 
-//Rutas de estudios
-Route::resources([
-	'estudio'=>'EstudioController'
-]);
+	Route::get('paciente/{id}/consulta/create', 'ConsultaController@create')->name('create_Consulta');
 
-//Rutas de pacientes
-Route::resources([
-	'paciente'=>'PacienteController'
-]);
-
-//Rutas de enfermedades
-Route::resources([
-	'enfermedad'=>'EnfermedadController'
-]);
-
-//Rutas de recetas
-Route::resources([
-	'receta'=>'RecetaController'
-]);
-
-}
-);
+});
