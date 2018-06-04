@@ -11,7 +11,8 @@
                 <th class="text-center">ID</th>
                 <th class="text-center">Fecha</th>
                 <th class="text-center">Paciente</th>
-
+                <th class="text-left">Edicion</th>
+                <th class="text-left">Complementos</th>
             </tr>
         </thead>
          <tfoot>
@@ -24,11 +25,14 @@
             <tr>
                 <td class="text-center">{{ $receta->id }}</td>
                 <td class="text-center">{{ $receta->fecha }}</td>
-                <td class="text-center">{{ $receta->id_paciente }}</td>
-
-                <a href="{{ route('receta.edit', ['receta' => $receta->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
+                <td class="text-center">{{ $receta->consulta->paciente->nombreCompleto }}</td>
+                <td class="text-left">
+                <a href="{{ route('receta.edit', ['receta' => $receta->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
+                <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
             @include('receta.modal')
+                </td>
+                <td class="text-left">
+                <a href="{{ route('create_receta_medicamento', ['receta' => $receta->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pills"></i></a>
                 </td>
             </tr>
             @endforeach

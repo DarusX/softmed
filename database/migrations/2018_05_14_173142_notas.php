@@ -15,8 +15,8 @@ class Notas extends Migration
     {
         Schema::create('notas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('consulta_id');
-            $table->string('nota');
+            $table->integer('consulta_id');
+            $table->text('nota');
             $table->timestamps();
             });    
     }

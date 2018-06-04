@@ -10,8 +10,15 @@ class consulta extends Model {
 
     protected $fillable = ["paciente_id",'fecha', 'hora'];
 
-    public function paciente(){
+    public function paciente() {
     	return $this->belongsTo(paciente::class, "paciente_id", "id");
     }
 	
+	public function notas(){
+		return $this->hasMany(nota::class, "consulta_id", "id");
+	}
+
+	public function recetas(){
+		return $this->hasMany(receta::class, "consulta_id", "id");
+	}
 }

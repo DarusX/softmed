@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\receta;
 use App\consulta;
-use Illuminate\Support\Facades\Redirect;
+use App\nota;
+use Illuminate\Http\Request;
 
-class RecetaController extends Controller
+class NotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class RecetaController extends Controller
      */
     public function index()
     {
-        return view('receta.index')->with([
-            'recetas' => Receta::paginate(20)
+        return view('nota.index')->with([
+            'notas' => Nota::paginate(20)
             ]);
     }
 
@@ -28,9 +26,9 @@ class RecetaController extends Controller
      */
     public function create($id)
     {
-        return view('receta.create')->with([
+        return view('nota.create')->with([
         'consulta'=> Consulta::find($id)
-        ]);
+    ]);    
     }
 
     /**
@@ -41,8 +39,8 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        Receta::create($request->all());
-        return redirect()->route('receta.index');
+        Nota::create($request->all());
+        return redirect()->route('consulta.index');
     }
 
     /**
@@ -53,7 +51,7 @@ class RecetaController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -64,8 +62,8 @@ class RecetaController extends Controller
      */
     public function edit($id)
     {
-        return view('receta.edit')->with([
-        'receta'=>Receta::find($id)
+        return view('nota.edit')->with([
+        'nota'=>Nota::find($id)
         ]);
     }
 
@@ -78,8 +76,8 @@ class RecetaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Receta::find($id)->update($request->all());
-        return redirect()->route('receta.index');
+        Nota::find($id)->update($request->all());
+        return redirect()->route('nota.index');
     }
 
     /**
@@ -90,7 +88,7 @@ class RecetaController extends Controller
      */
     public function destroy($id)
     {
-        Receta::destroy($id);
-        return redirect()->route('receta.index');
+        Nota::destroy($id);
+        return redirect()->route('nota.index');
     }
 }

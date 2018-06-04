@@ -7,7 +7,6 @@
   
     <legend>Editar Enfermedad</legend>
   
-  
     <div class="form-group {{$errors->has('enfermedad')? ' has-error':''}}">
       <label class="control-label" for="">Enfermedad</label>
       <input type="text" name="enfermedad" class="form-control" value="{{$enfermedad->enfermedad}}">

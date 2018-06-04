@@ -5,6 +5,7 @@ use App\paciente;
 use App\consulta;
 use Illuminate\Http\Request;
 
+
 class ConsultaController extends Controller
 {
     /**
@@ -39,8 +40,12 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'fecha'=>'required']);
+
         Consulta::create($request->all());
-        return redirect()->route('paciente.index');    }
+        return redirect()->route('consulta.index');
+        }
 
     /**
      * Display the specified resource.
@@ -60,8 +65,10 @@ class ConsultaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {        
+        return view('consulta.edit')->with([
+            'consulta'=>Consulta::find($id)
+        ]);
     }
 
     /**
@@ -73,7 +80,11 @@ class ConsultaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'fecha'=>'required']);
+
+        Consulta::find($id)->update($request->all());
+        return redirect()->route('consulta.index');
     }
 
     /**

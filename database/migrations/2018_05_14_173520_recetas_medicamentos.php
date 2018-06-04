@@ -15,8 +15,8 @@ class RecetasMedicamentos extends Migration
     {
         Schema::create('recetas_medicamentos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('receta_id');
-            $table->string('medicamento_id');
+            $table->integer('receta_id');
+            $table->integer('medicamento_id');
             $table->string('dosis');
             $table->timestamps();
             });        

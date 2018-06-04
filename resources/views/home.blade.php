@@ -23,6 +23,7 @@
                <p><a href="{{route('enfermedad.index')}}">Enfermedades</a></p>
                <p><a href="{{route('consulta.index')}}">Consultas</a></p>
                <p><a href="{{route('receta.index')}}">Recetas</a></p>
+               <p><a href="{{route('nota.index')}}">Notas</a></p>
                </div> 
 
 

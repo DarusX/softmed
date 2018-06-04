@@ -28,7 +28,7 @@
                 <td class="text-left">
                 <a href="{{ route('paciente.edit', ['paciente' => $paciente->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
                 <a href="" data-target="#modal-delete-{{$paciente->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>
-                <a href="{{ route('create_Consulta', ['paciente' => $paciente->id])}}" class="btn btn-xs btn-default"><i class="fas fa-calendar-plus"></i></a>                
+                <a href="{{ route('create_Consulta', ['paciente' => $paciente->id])}}" class="btn btn-xs btn-default"><i class="fas fa-calendar-alt"></i></a>                
             @include('paciente.modal')                
             </td>
             </tr>

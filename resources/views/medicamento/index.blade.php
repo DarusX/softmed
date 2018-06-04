@@ -7,7 +7,6 @@
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
                 <th class="text-center">Nombre</th>
                 <th class="text-center">Componente activo</th>
                 <th class="text-center">Presentacion</th>
@@ -22,7 +21,6 @@
         <tbody>
             @foreach($medicamentos as $medicamento)
             <tr>
-                <td class="text-center">{{ $medicamento->id }}</td>
                 <td class="text-center">{{ $medicamento->nombre }}</td>
                 <td class="text-center">{{ $medicamento->compuesto }}</td>
                 <td class="text-center">{{ $medicamento->presentacion }}</td>
