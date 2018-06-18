@@ -12,7 +12,7 @@
 
 	<select name="medicamento_id">
 	 @foreach($medicamentos as $medicamento)
-   	<option  value="{{$medicamento->id}}"> {{ $medicamento->nombre }} </option>
+   	<option  value="{{$medicamento->id}}"> {{ $medicamento->DatosCompletos}} </option>
  	@endforeach
 	</select>
     

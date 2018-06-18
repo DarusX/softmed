@@ -13,10 +13,7 @@
                 <th class="text-center">Acciones</th>
             </tr>
         </thead>
-         <tfoot>
-
-    <th colspan=4> {{ $medicamentos->render() }} </th>
-      
+         <tfoot>      
   </tfoot>
         <tbody>
             @foreach($medicamentos as $medicamento)
@@ -35,6 +32,7 @@
             @endforeach
         </tbody>
     </table>
+{{ $medicamentos->render() }}
 </div>
 
 @endsection

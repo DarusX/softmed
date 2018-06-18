@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\receta;
 use App\consulta;
+use App\medicamento;
+use App\receta_medicamento;
+use App\nota;
 use Illuminate\Support\Facades\Redirect;
 
 class RecetaController extends Controller
@@ -17,7 +20,7 @@ class RecetaController extends Controller
     public function index()
     {
         return view('receta.index')->with([
-            'recetas' => Receta::paginate(20)
+            'recetas' => Receta::paginate(10)
             ]);
     }
 
@@ -53,7 +56,7 @@ class RecetaController extends Controller
      */
     public function show($id)
     {
-        //
+        return Receta::with('receta_medicamento.medicamento')->find($id);
     }
 
     /**
@@ -65,7 +68,11 @@ class RecetaController extends Controller
     public function edit($id)
     {
         return view('receta.edit')->with([
-        'receta'=>Receta::find($id)
+        'receta'=>Receta::find($id),
+        'medicamentos'=> Medicamento::all(),
+        'recetas_medicamentos'=>Receta_medicamento::all(),
+        'consulta'=>Consulta::all(),
+        'notas'=>Nota::all()
         ]);
     }
 

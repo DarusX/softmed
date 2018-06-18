@@ -16,6 +16,6 @@ class paciente extends Model {
 
 	public function getNombreCompletoAttribute()
 	{
-		return $this->nombre . ' ' . $this->paterno . ' ' . $this->materno;
+		return $this->paterno . ' ' . $this->materno . ' ' . $this->nombre;
 	}
 }

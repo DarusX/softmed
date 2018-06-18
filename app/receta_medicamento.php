@@ -16,6 +16,6 @@ class receta_medicamento extends Model {
     }
     public function medicamento()
     {
-    	return $this->hasMany(Medicamento::class, 'medicamento_id', 'id');
+    	return $this->belongsTo(Medicamento::class, 'medicamento_id', 'id');
     }
 }

@@ -13,9 +13,11 @@ class Receta_MedicamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        return view('receta_medicamento.index')->with([
+            'recetas_medicamentos' => Receta_Medicamento::paginate(20)
+            ]);        
     }
 
     /**
@@ -40,8 +42,8 @@ class Receta_MedicamentoController extends Controller
     public function store(Request $request)
     {
         receta_medicamento::create($request->all());
-        return redirect()->route('consulta.index');
-        }
+        return redirect()->back();
+    }
 
     /**
      * Display the specified resource.
@@ -85,6 +87,8 @@ class Receta_MedicamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Receta_Medicamento::destroy($id);
+        return redirect()->back();
+
     }
 }

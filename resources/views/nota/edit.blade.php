@@ -8,7 +8,7 @@
      
     <input type="hidden" name="consulta_id" value="{{$nota->consulta_id}}">
 
-    <textarea name="nota" rows="10" cols="40">{{$nota->nota}}</textarea>
+    <textarea name="nota" rows="10" cols="40">Agregar notas de la consulta</textarea>
     <div class="form-group">
       <button type="submit" class="btn btn-info">Agendar</button>
     </div>

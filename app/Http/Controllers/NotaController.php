@@ -40,7 +40,7 @@ class NotaController extends Controller
     public function store(Request $request)
     {
         Nota::create($request->all());
-        return redirect()->route('consulta.index');
+        return redirect()->back();
     }
 
     /**
@@ -89,6 +89,6 @@ class NotaController extends Controller
     public function destroy($id)
     {
         Nota::destroy($id);
-        return redirect()->route('nota.index');
+        return redirect()->back();
     }
 }

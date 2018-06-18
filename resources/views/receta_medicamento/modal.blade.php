@@ -1,6 +1,6 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog"  id="modal-delete-{{$nota->id}}">
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog"  id="modal-delete-{{$receta_medicamento->id}}">
 	
-	{{Form::Open(array('action'=>array('NotaController@destroy',$nota->id),'method'=>'delete'))}}
+	{{Form::Open(array('action'=>array('Receta_MedicamentoController@destroy',$receta_medicamento->id),'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,10 +8,10 @@
 				aria-label="Close">
                      <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Eliminar Nota</h4>
+                <h4 class="modal-title">Eliminar Medicamento Recetado</h4>
 			</div>
 			<div class="modal-body">
-				<p>¿Desea realmente eliminar la nota?</p>
+				<p>¿Desea realmente eliminar el medicamento recetado?</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

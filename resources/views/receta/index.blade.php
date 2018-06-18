@@ -12,14 +12,9 @@
                 <th class="text-center">Fecha</th>
                 <th class="text-center">Paciente</th>
                 <th class="text-left">Edicion</th>
-                <th class="text-left">Complementos</th>
             </tr>
         </thead>
-         <tfoot>
-
-    <th colspan=4> {{ $recetas->render() }} </th>
-      
-  </tfoot>
+        
         <tbody>
             @foreach($recetas as $receta)
             <tr>
@@ -31,12 +26,10 @@
                 <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
             @include('receta.modal')
                 </td>
-                <td class="text-left">
-                <a href="{{ route('create_receta_medicamento', ['receta' => $receta->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pills"></i></a>
-                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+{{ $recetas->render() }}
 </div>
 @endsection
