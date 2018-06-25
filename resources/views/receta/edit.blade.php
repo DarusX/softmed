@@ -59,7 +59,7 @@
   </tfoot>
        
         <tbody>
-            @foreach($notas as $nota)
+            @foreach($receta->consulta->notas as $nota)
             <tr>
                 <td class="text-left">{{ $nota->consulta->fecha }}</td>
                 <td class="text-left">{{ $nota->nota }}</td>
@@ -74,7 +74,6 @@
 </div>
 
 <div class="col-sm-12">
-  {{--$receta->receta_medicamento[0]->medicamento->compuesto--}}
 
     <form action="{{route('receta_medicamento.store')}}" method="post">
      {{ csrf_field()}}
@@ -104,7 +103,6 @@
 
 
 <div class="col-sm-12">
-  {{--$receta->receta_medicamento[0]->medicamento->compuesto--}}
 <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -115,13 +113,59 @@
         </thead>
        
         <tbody>
-            @foreach($recetas_medicamentos as $receta_medicamento)
+            @foreach($receta->medicamentos as $medicamento)
             <tr>
-                <td class="text-left">{{ $receta_medicamento->medicamento->DatosCompletos }}</td>
-                <td class="text-left">{{ $receta_medicamento->dosis }}</td>
+                <td class="text-left">{{ $medicamento->DatosCompletos }}</td>
+                <td class="text-left">{{ $medicamento->pivot->dosis }}</td>
                 <td class="text-left">
-                <a href="" data-target="#modal-delete-{{$receta_medicamento->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
-            @include('receta_medicamento.modal')
+                <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
+            
+                </td>
+
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="col-sm-6">
+  <form action="{{route('add_enfermedad', $receta->id)}}" method="post">
+     {{ csrf_field()}}
+
+    <legend>Agregar diagnostico de enfermedades a la receta</legend>
+     
+    <input type="hidden" name="receta_id" value="{{$receta->id}}">
+
+  <select name="enfermedad_id">
+   @foreach($enfermedades as $enfermedad)
+    <option  value="{{$enfermedad->id}}"> {{ $enfermedad->enfermedad}} </option>
+  @endforeach
+  </select>
+    
+    <div class="form-group">
+      <button type="submit" class="btn btn-info">Agregar</button>
+    </div>
+  
+  </form>
+
+</div>
+
+<div class="col-sm-5">
+<table class="table table-striped" id="MyTable">
+        <thead>
+            <tr>
+                <th class="text-left">Enfermedad</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+            @foreach($receta->enfermedades as $enfermedad)
+            <tr>
+                <td class="text-left">{{ $enfermedad->enfermedad }}</td>
+                <td class="text-left">
+                <a href="{{ route('rmv_enfermedad', ['receta' => $receta->id, 'enfermedad' => $enfermedad->id])}}" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
                 </td>
 
             </tr>

@@ -15,15 +15,15 @@ class receta extends Model {
     	return $this->belongsTo(consulta::class, 'consulta_id', 'id');
     }
 
-    public function receta_medicamento()
+    public function medicamentos()
     {
-    	return $this->hasMany(receta_medicamento::class, 'receta_id', 'id');
+    	return $this->belongsToMany(medicamento::class, 'recetas_medicamentos', 'receta_id', 'medicamento_id')->withPivot([
+            'dosis'
+        ])->withTimestamps();
     }
 
-	
+    public function enfermedades()
+    {
+        return $this->belongsToMany(enfermedad::class, 'recetas_enfermedades', 'receta_id', 'enfermedad_id');
+    }
 }
-
-
-//$receta = Receta::find($id);
-
-//$receta->consulta->paciente->nombreCompleto;

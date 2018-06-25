@@ -41,7 +41,8 @@ class Receta_MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        receta_medicamento::create($request->all());
+        //receta_medicamento::create($request->all());
+        Receta::find($request->receta_id)->medicamentos()->attach($request->medicamento_id, ['dosis' => $request->dosis]);
         return redirect()->back();
     }
 

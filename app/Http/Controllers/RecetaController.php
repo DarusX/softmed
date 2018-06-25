@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\receta;
 use App\consulta;
 use App\medicamento;
-use App\receta_medicamento;
+use App\enfermedad;
 use App\nota;
 use Illuminate\Support\Facades\Redirect;
 
@@ -70,9 +70,7 @@ class RecetaController extends Controller
         return view('receta.edit')->with([
         'receta'=>Receta::find($id),
         'medicamentos'=> Medicamento::all(),
-        'recetas_medicamentos'=>Receta_medicamento::all(),
-        'consulta'=>Consulta::all(),
-        'notas'=>Nota::all()
+        'enfermedades'=>Enfermedad::all()
         ]);
     }
 
@@ -99,5 +97,22 @@ class RecetaController extends Controller
     {
         Receta::destroy($id);
         return redirect()->route('receta.index');
+    }
+
+    public function destroy_medicamento($id)
+    {
+        Receta::find($id)->medicamentos()->detach($request->medicamento_id);
+    }
+
+    public function addEnfermedad(Request $request)
+    {        
+        Receta::find($request->receta_id)->enfermedades()->attach($request->enfermedad_id);
+        return redirect()->back();
+    }
+
+    public function rmvEnfermedad($id)
+    {
+        Receta::find($id)->enfermedades()->detach($id);
+        return redirect()->back();
     }
 }
