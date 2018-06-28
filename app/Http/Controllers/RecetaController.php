@@ -8,6 +8,7 @@ use App\consulta;
 use App\medicamento;
 use App\enfermedad;
 use App\nota;
+use App\estudio;
 use Illuminate\Support\Facades\Redirect;
 
 class RecetaController extends Controller
@@ -69,8 +70,9 @@ class RecetaController extends Controller
     {
         return view('receta.edit')->with([
         'receta'=>Receta::find($id),
-        'medicamentos'=> Medicamento::all(),
-        'enfermedades'=>Enfermedad::all()
+        'enfermedades'=>Enfermedad::all(),
+        'estudios'=>Estudio::all(),
+        'medicamentos'=>Medicamento::all()
         ]);
     }
 
@@ -110,9 +112,22 @@ class RecetaController extends Controller
         return redirect()->back();
     }
 
-    public function rmvEnfermedad($id)
+    public function rmvEnfermedad($id, $enfermedad_id)
     {
-        Receta::find($id)->enfermedades()->detach($id);
+        Receta::find($id)->enfermedades()->detach($enfermedad_id);
         return redirect()->back();
     }
+
+    public function addEstudio(Request $request)
+    {
+        Receta::find($request->receta_id)->estudios()->attach($request->estudio_id);
+        return redirect()->back();
+    }
+
+
+
+
+
+
 }
+

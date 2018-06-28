@@ -28,5 +28,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('consulta/{id}/nota/create', 'NotaController@create')->name('create_Nota');
 	Route::get('consulta/{id}/receta/create', 'RecetaController@create')->name('create_Receta');
 	Route::post('receta/{id}/addEnfermedad', 'RecetaController@addEnfermedad')->name('add_enfermedad');
-	Route::post('receta/{id}/rmvEnfermedad/{enfermedad}', 'RecetaController@rmvEnfermedad')->name('rmv_enfermedad');
+	Route::get('receta/{id}/rmvEnfermedad/{enfermedad_id}', 'RecetaController@rmvEnfermedad')->name('rmv_enfermedad');
+	Route::post('receta/{id}/addEstudio', 'RecetaController@addEstudio')->name('add_estudio');
 });

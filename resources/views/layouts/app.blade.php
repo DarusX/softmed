@@ -14,7 +14,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
-</head>
+    <link href="{{ asset('css/select2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/datatables.css')}}">
+
+    </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -86,7 +89,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/select2.min.js')}}"></script>
+    <script type="text/javascript" charset="utf8" src="{{asset('js/datatables.js')}}"></script>
     @yield('scripts')
 </body>
 </html>

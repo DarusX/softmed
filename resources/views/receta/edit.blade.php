@@ -22,6 +22,7 @@
 
 </div>
 
+<?php if (isset($receta->consulta->nota)): ?>
 
 
 <div class="col-sm-6">
@@ -41,8 +42,9 @@
   
   </form>
 </div>
+<?php else: ?>
 
-<div class="col-sm-6">
+<div class="col-sm-12">
     <h4>
         <strong>Notas previas</strong>
     </h4>
@@ -72,8 +74,9 @@
         </tbody>
     </table>
 </div>
+<?php endif ?>
 
-<div class="col-sm-12">
+<div class="col-sm-6">
 
     <form action="{{route('receta_medicamento.store')}}" method="post">
      {{ csrf_field()}}
@@ -82,12 +85,12 @@
      
     <input type="hidden" name="receta_id" value="{{$receta->id}}">
 
-  <select name="medicamento_id">
+  <select  id="medicamento" name="medicamento_id" class="select2 form-control">
    @foreach($medicamentos as $medicamento)
-    <option  value="{{$medicamento->id}}"> {{ $medicamento->DatosCompletos}} </option>
+    <option  value="{{$medicamento->id}}"> {{ $medicamento->nombre}} </option>
   @endforeach
   </select>
-    
+
    <div class="form-group {{$errors->has('dosis')? ' has-error':''}}">
       <label class="control-label" for="">Dosis</label>
       <input type="text" name="dosis" class="form-control" value="{{old('dosis')}}">
@@ -129,7 +132,6 @@
 </div>
 
 
-
 <div class="col-sm-6">
   <form action="{{route('add_enfermedad', $receta->id)}}" method="post">
      {{ csrf_field()}}
@@ -138,7 +140,7 @@
      
     <input type="hidden" name="receta_id" value="{{$receta->id}}">
 
-  <select name="enfermedad_id">
+  <select id="enfermedad" name="enfermedad_id" class="select2 form-control">
    @foreach($enfermedades as $enfermedad)
     <option  value="{{$enfermedad->id}}"> {{ $enfermedad->enfermedad}} </option>
   @endforeach
@@ -152,7 +154,7 @@
 
 </div>
 
-<div class="col-sm-5">
+<div class="col-sm-12">
 <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -173,4 +175,55 @@
         </tbody>
     </table>
 </div>
+
+
+<div class="col-sm-6">
+  <form action="{{route('add_estudio', $receta->id)}}" method="post">
+     {{ csrf_field()}}
+
+    <legend>Agregar orden de estudio a la receta</legend>
+     
+    <input type="hidden" name="receta_id" value="{{$receta->id}}">
+
+  <select id="estudio" name="estudio_id" class="select2 form-control">
+   @foreach($estudios as $estudio)
+    <option  value="{{$estudio->id}}"> {{ $estudio->estudio}} </option>
+  @endforeach
+  </select >
+    
+    <div class="form-group">
+      <button type="submit" class="btn btn-info">Agregar</button>
+    </div>
+  </form>
+
+
+<div class="col-sm-12">
+<table class="table table-striped" id="MyTable">
+        <thead>
+            <tr>
+                <th class="text-left">Estudios</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+            @foreach($receta->estudios as $estudio)
+            <tr>
+                <td class="text-left">{{ $estudio->estudio }}</td>
+                <td class="text-left">
+                <a href="{{ route('rmv_enfermedad', ['receta' => $receta->id, 'enfermedad' => $enfermedad->id])}}" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
+                </td>
+
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
+@endsection
+@section('scripts')
+<script> 
+  $(".select2").select2();
+  $(".table").DataTable();
+</script>
 @endsection

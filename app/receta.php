@@ -26,4 +26,9 @@ class receta extends Model {
     {
         return $this->belongsToMany(enfermedad::class, 'recetas_enfermedades', 'receta_id', 'enfermedad_id');
     }
+
+    public function estudios()
+    {
+        return $this->belongsToMany(estudio::class, 'estudios_recetas', 'receta_id', 'estudio_id');
+    }
 }

@@ -17,7 +17,6 @@ class EstudiosRecetas extends Migration
             $table->increments('id');
             $table->string('estudio_id');
             $table->string('receta_id');
-            $table->string('dosis');
             $table->timestamps();
             });        
     }
