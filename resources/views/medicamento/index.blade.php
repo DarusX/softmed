@@ -13,8 +13,8 @@
                 <th class="text-center">Acciones</th>
             </tr>
         </thead>
-         <tfoot>      
-  </tfoot>
+        <tfoot>
+        </tfoot>
         <tbody>
             @foreach($medicamentos as $medicamento)
             <tr>
@@ -22,17 +22,21 @@
                 <td class="text-center">{{ $medicamento->compuesto }}</td>
                 <td class="text-center">{{ $medicamento->presentacion }}</td>
                 <td class="text-center">
-                <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
-            @include('medicamento.modal')
+                    <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    @include('medicamento.modal')
                 </td>
-                    </form>
+                </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-{{ $medicamentos->render() }}
+    {{ $medicamentos->render() }}
 </div>
 
 @endsection
