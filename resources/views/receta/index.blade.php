@@ -24,7 +24,6 @@
                 <td class="text-left">
                 <a href="{{ route('receta.edit', ['receta' => $receta->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
                 <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>
-                @include('receta.modal')
                 </td>
             </tr>
             @endforeach

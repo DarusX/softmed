@@ -22,7 +22,7 @@
 
 </div>
 
-<?php if (isset($receta->consulta->nota)): ?>
+<?php if (empty($receta->consulta->nota)): ?>
 
 
 <div class="col-sm-6">
@@ -67,7 +67,6 @@
                 <td class="text-left">{{ $nota->nota }}</td>
                 <td class="text-center">
                 <a href="" data-target="#modal-delete-{{$nota->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>
-                @include('nota.modal')
                 </td>
             </tr>
             @endforeach
