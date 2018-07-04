@@ -56,6 +56,10 @@
                 }
             })
         })
+        $(".table").DataTable({
+            paging: false,
+            searching: false
+        })
     </script> 
     @yield('scripts')
 </body>
