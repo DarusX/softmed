@@ -14,6 +14,7 @@
  
     <div class="form-group">
       <button type="submit" class="btn btn-info">Guardar</button>
+      <a href="{{ URL::previous() }}" class="btn btn-danger" role="button">Cancelar</a>
     </div>
 
   </form>

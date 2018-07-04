@@ -7,6 +7,7 @@
    {{ method_field('PUT')}}
   
     <legend>Editar Receta para {{$receta->consulta->paciente->nombreCompleto}}</legend>
+    <a href="{{ URL::previous() }}" class="btn btn-danger" role="button">Cancelar</a>
   
   
     <div class="form-group {{$errors->has('fecha')? ' has-error':''}}">
@@ -139,7 +140,7 @@
      
     <input type="hidden" name="receta_id" value="{{$receta->id}}">
 
-  <select id="enfermedad" name="enfermedad_id" class="select2 form-control">
+  <select id="enfermedad" name="enfermedad_id" class="select2 form-control" >
    @foreach($enfermedades as $enfermedad)
     <option  value="{{$enfermedad->id}}"> {{ $enfermedad->enfermedad}} </option>
   @endforeach

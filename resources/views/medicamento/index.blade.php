@@ -4,6 +4,7 @@
         <strong>Medicamentos</strong>
     </h1>
     <a href="{{route('medicamento.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -22,10 +23,10 @@
                 <td class="text-center">{{ $medicamento->compuesto }}</td>
                 <td class="text-center">{{ $medicamento->presentacion }}</td>
                 <td class="text-center">
-                    <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}">
+                    <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}" class="btn btn-xs btn-default">
                         <i class="fas fa-pencil-alt"></i>
                     </a>
-                    <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal">
+                    <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal" class="btn btn-xs btn-default">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                     @include('medicamento.modal')
@@ -38,5 +39,6 @@
     </table>
     {{ $medicamentos->render() }}
 </div>
+
 
 @endsection

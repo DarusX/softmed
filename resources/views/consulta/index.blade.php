@@ -3,6 +3,7 @@
     <h1>
         <strong>Consultas</strong>
     </h1>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -35,9 +36,6 @@
                 </td>
 
                 <td class="text-left">
-                    <a href="{{ route('create_Nota', ['consulta' => $consulta->id])}}" class="btn btn-xs btn-default">
-                        <i class="fas fa-sticky-note"></i>
-                    </a>
                     <a href="{{ route('create_Receta', ['consulta' => $consulta->id])}}" class="btn btn-xs btn-default">
                         <i class="fas fa-capsules"></i>
                     </a>

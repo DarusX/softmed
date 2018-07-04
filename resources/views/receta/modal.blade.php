@@ -1,5 +1,4 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog"  id="modal-delete-{{$receta->id}}">
-	{{Form::Open(array('action'=>array('RecetaController@destroy',$receta->id),'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -18,6 +17,5 @@
 			</div>
 		</div>
 	</div>
-	{{Form::Close()}}
 
 </div>

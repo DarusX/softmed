@@ -4,7 +4,8 @@
     <h1>
         <strong>Estudios</strong>
     </h1>
-   <a href="{{route('estudio.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('estudio.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
@@ -26,8 +27,8 @@
                 <td class="text-center">{{ $estudio->id }}</td>
                 <td class="text-center">{{ $estudio->estudio }}</td>
                 <td class="text-center">
-                <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" ><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$estudio->id}}" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>                
+                <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
+                <a href="" data-target="#modal-delete-{{$estudio->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
             @include('estudio.modal')
             </td>
             </tr>

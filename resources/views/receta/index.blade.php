@@ -4,7 +4,7 @@
     <h1>
         <strong>Recetas</strong>
     </h1>
-<a href="{{route('receta.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
