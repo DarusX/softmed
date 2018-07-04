@@ -4,36 +4,24 @@
     <h1>
         <strong>Estudios</strong>
     </h1>
-    <a href="{{route('estudio.create')}}" class="btn btn-primary" role="button">Nuevo</a>
-    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
-    <table class="table table-striped" id="MyTable">
+    <a href="{{route('estudio.create')}}" class="btn btn-primary">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-default">Regresar</a>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Estudio</th>
-                <th class="text-center">Acciones</th>
+                <th>Estudio</th>
+                <th>Acciones</th>
             </tr>
         </thead>
-         
-         <tfoot>
-
-    <th colspan=4> {{ $estudios->render() }} </th>
-      
-  </tfoot>
-       
         <tbody>
             @foreach($estudios as $estudio)
             <tr>
-                <td class="text-center">{{ $estudio->id }}</td>
-                <td class="text-center">{{ $estudio->estudio }}</td>
-                <td class="text-center">
-                <a href="{{ route('estudio.edit', ['estudio' => $estudio->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$estudio->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
-            @include('estudio.modal')
-            </td>
+                <td>{{ $estudio->estudio }}</td>
+                <td>
+                    <a href="{{route('estudio.edit', $estudio)}}" class="btn btn-info btn-xs"><i class="fas fa-pen"></i></a>
+                    <a href="{{route('estudio.destroy', $estudio)}}" class="btn btn-danger btn-xs destroy"><i class="fas fa-times"></i></a>
+                </td>
             </tr>
-
-
             @endforeach
         </tbody>
     </table>
