@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,22 +14,23 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/fontawesome-all.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
     <link href="{{ asset('css/select2.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/datatables.css')}}">
 
-    </head>
+</head>
+
 <body>
     <div id="app">
-        @include('layouts.navbar')
-        @include('layouts.errors')
+        @include('layouts.navbar') @include('layouts.errors')
         <div class="container">
             <div class="row">
                 @yield('content')
             </div>
         </div>
-  
-        
+
+
     </div>
 
     <!-- Scripts -->
@@ -36,6 +38,27 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/select2.min.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="{{asset('js/datatables.js')}}"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": "{{csrf_token()}}"
+            }
+        });
+        $(".destroy").click(function () {
+            event.preventDefault()
+            $.ajax({
+                url: $(this).attr("href"),
+                method: "POST",
+                data: {
+                    _method: "DELETE"
+                },
+                success: (data) => {
+                    location.reload()
+                }
+            })
+        })
+    </script> 
     @yield('scripts')
 </body>
+
 </html>
