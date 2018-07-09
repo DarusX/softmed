@@ -21,7 +21,7 @@ class RecetaController extends Controller
     public function index()
     {
         return view('receta.index')->with([
-            'recetas' => Receta::paginate(10)
+            'recetas' => Receta::all()
             ]);
     }
 

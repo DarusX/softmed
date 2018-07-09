@@ -15,7 +15,7 @@ class NotaController extends Controller
     public function index()
     {
         return view('nota.index')->with([
-            'notas' => Nota::paginate(20)
+            'notas' => Nota::all()
             ]);
     }
 

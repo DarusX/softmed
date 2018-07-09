@@ -16,7 +16,7 @@ class ConsultaController extends Controller
     public function index()
     {
         return view('consulta.index')->with([
-            'consultas' => Consulta::paginate(20)
+            'consultas' => Consulta::all()
             ]);
     }
 

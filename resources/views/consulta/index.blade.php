@@ -3,42 +3,30 @@
     <h1>
         <strong>Consultas</strong>
     </h1>
-    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
-    <table class="table table-striped" id="MyTable">
+    <a href="{{route('home') }}" class="btn btn-default">Regresar</a>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th class="text-left">Paciente</th>
-                <th class="text-left">Fecha</th>
-                <th class="text-left">Hora</th>
-                <th class="text-left">Edicion</th>
-                <th class="text-left">Complementos</th>
+                <th>Paciente</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Acciones</th>
             </tr>
         </thead>
+<<<<<<< HEAD
 
-        <tfoot>
-
-        </tfoot>
-
+=======
+>>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
         <tbody>
             @foreach($consultas as $consulta)
             <tr>
-                <td class="text-left">{{$consulta->paciente->nombreCompleto}}</td>
-                <td class="text-left">{{ $consulta->fecha }}</td>
-                <td class="text-left">{{ $consulta->hora }}</td>
-
-                <td class="text-left">
-                    <a href="{{ route('consulta.edit', $consulta)}}" class="btn btn-xs btn-default">
-                        <i class="fas fa-pencil-alt"></i>
-                    </a>
-                    <a href="" data-target="#modal-delete-{{$consulta->id}}" data-toggle="modal" class="btn btn-xs btn-default">
-                        <i class="fas fa-trash-alt"></i>
-                    </a>
-                </td>
-
-                <td class="text-left">
-                    <a href="{{ route('create_Receta', ['consulta' => $consulta->id])}}" class="btn btn-xs btn-default">
-                        <i class="fas fa-capsules"></i>
-                    </a>
+                <td>{{$consulta->paciente->nombreCompleto}}</td>
+                <td>{{ $consulta->fecha }}</td>
+                <td>{{ $consulta->hora }}</td>
+                <td>
+                    <a href="{{ route('consulta.edit', $consulta)}}" class="btn btn-xs btn-info"><i class="fas fa-pen"></i></a>
+                    <a href="{{ route('consulta.destroy', $consulta)}}" class="btn btn-xs btn-danger"><i class="fas fa-times"></i></a>
+                    <a href="{{ route('create_receta',$consulta)}}" class="btn btn-xs btn-success"><i class="fas fa-file"></i></a>
                 </td>
                 @include('consulta.modal')
             </tr>
@@ -47,4 +35,10 @@
     </table>
 </div>
 
+@endsection
+
+@section('scripts')
+<script> 
+  $(".table").DataTable();
+</script>
 @endsection
