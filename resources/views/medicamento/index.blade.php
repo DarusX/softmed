@@ -15,7 +15,10 @@
             </tr>
         </thead>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
         <tbody>
@@ -33,6 +36,10 @@
         </tbody>
     </table>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    {{ $medicamentos->links() }}
+>>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
     {{ $medicamentos->links() }}
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e

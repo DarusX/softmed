@@ -14,7 +14,10 @@
             </tr>
         </thead>
 <<<<<<< HEAD
+<<<<<<< HEAD
          
+=======
+>>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
         <tbody>
@@ -31,6 +34,7 @@
     </table>
 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 @endsection
 
@@ -38,6 +42,8 @@
 <script> 
   $(".table").DataTable();
 </script>
+=======
+>>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 @endsection
