@@ -36,6 +36,29 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/select2.min.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="{{asset('js/datatables.js')}}"></script>
+<<<<<<< HEAD
+=======
+    <script>
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": "{{csrf_token()}}"
+            }
+        });
+        $(".destroy").click(function () {
+            event.preventDefault()
+            $.ajax({
+                url: $(this).attr("href"),
+                method: "POST",
+                data: {
+                    _method: "DELETE"
+                },
+                success: (data) => {
+                    location.reload()
+                }
+            })
+        })
+    </script> 
+>>>>>>> parent of 2c91217... Mejoras Consulta
     @yield('scripts')
 </body>
 </html>
