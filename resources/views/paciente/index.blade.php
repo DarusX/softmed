@@ -4,12 +4,15 @@
     <h1>
         <strong>Pacientes</strong>
     </h1>
-    <a href="{{route('paciente.create')}}" class="btn btn-primary">Nuevo</a>
-    <a href="{{route('home') }}" class="btn btn-default">Regresar</a>
-    <table class="table table-striped">
+    <a href="{{route('paciente.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
+    <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
                 <th>Paciente</th>
+                <th>Fecha de nacimiento</th>
+                <th>Curp</th>
+                <th>Domicilio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -17,21 +20,26 @@
             @foreach($pacientes as $paciente)
             <tr>
                 <td>{{ $paciente->nombreCompleto }}</td>
+                <td>{{ $paciente->nacimiento }}</td>
+                <td>{{ $paciente->curp }}</td>
+                <td>{{ $paciente->domicilio }}</td>
                 <td>
-                    <a href="{{route('paciente.edit', $paciente)}}" class="btn btn-info btn-xs"><i class="fas fa-pencil-alt"></i></a>
-                    <a href="{{route('paciente.destroy', $paciente)}}" class="btn btn-danger btn-xs destroy"><i class="fas fa-times"></i></a>
-                    <a href="{{route('create_consulta', $paciente)}}" class="btn btn-xs btn-success"><i class="fas fa-calendar-alt"></i></a>
+                    <a href="{{ route('paciente.edit', ['paciente' => $paciente->id])}}" class="btn btn-xs btn-default">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a href="" data-target="#modal-delete-{{$paciente->id}}" data-toggle="modal" class="btn btn-xs btn-default">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    <a href="{{ route('create_Consulta', ['paciente' => $paciente->id])}}" class="btn btn-xs btn-default">
+                        <i class="fas fa-calendar-alt"></i>
+                    </a>
+                    @include('paciente.modal') 
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    {{$pacientes->links()}}
 </div>
 
-@endsection
-
-@section('scripts')
-<script> 
-  $(".table").DataTable();
-</script>
 @endsection

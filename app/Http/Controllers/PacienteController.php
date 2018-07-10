@@ -15,7 +15,7 @@ class PacienteController extends Controller
     public function index()
     {
         return view('paciente.index')->with([
-            'pacientes' => Paciente::all()
+            'pacientes' => Paciente::orderBy('paterno', 'ASC')->paginate(20)
         ]);
     }
 

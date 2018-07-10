@@ -224,5 +224,6 @@
 @section('scripts')
 <script> 
   $(".select2").select2();
+  $(".table").DataTable();
 </script>
 @endsection

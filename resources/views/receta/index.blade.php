@@ -29,11 +29,6 @@
             @endforeach
         </tbody>
     </table>
+{{ $recetas->render() }}
 </div>
-@endsection
-
-@section('scripts')
-<script> 
-  $(".table").DataTable();
-</script>
 @endsection

@@ -14,7 +14,7 @@ class EnfermedadController extends Controller
     public function index()
     {
         return view('enfermedad.index')->with([
-            'enfermedades' => Enfermedad::all()
+            'enfermedades' => Enfermedad::paginate(20)
         ]);
     }
 

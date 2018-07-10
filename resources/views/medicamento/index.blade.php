@@ -3,17 +3,18 @@
     <h1>
         <strong>Medicamentos</strong>
     </h1>
-    <a href="{{route('medicamento.create')}}" class="btn btn-default">Nuevo</a>
-    <a href="{{route('home') }}" class="btn btn-default">Regresar</a>
-    <table class="table table-striped">
+    <a href="{{route('medicamento.create')}}" class="btn btn-primary" role="button">Nuevo</a>
+    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
+    <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Componente activo</th>
-                <th>Presentacion</th>
-                <th>Acciones</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Componente activo</th>
+                <th class="text-center">Presentacion</th>
+                <th class="text-center">Acciones</th>
             </tr>
         </thead>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -21,15 +22,26 @@
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
+=======
+        <tfoot>
+        </tfoot>
+>>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
         <tbody>
             @foreach($medicamentos as $medicamento)
             <tr>
-                <td>{{ $medicamento->nombre }}</td>
-                <td>{{ $medicamento->compuesto }}</td>
-                <td>{{ $medicamento->presentacion }}</td>
-                <td>
-                    <a href="{{route('medicamento.edit', $medicamento)}}" class="btn btn-info btn-xs"><i class="fas fa-pen"></i></a>
-                    <a href="{{route('medicamento.destroy', $medicamento)}}" class="btn btn-danger btn-xs destroy"><i class="fas fa-times"></i></a>
+                <td class="text-center">{{ $medicamento->nombre }}</td>
+                <td class="text-center">{{ $medicamento->compuesto }}</td>
+                <td class="text-center">{{ $medicamento->presentacion }}</td>
+                <td class="text-center">
+                    <a href="{{ route('medicamento.edit', ['medicamento' => $medicamento->id])}}" class="btn btn-xs btn-default">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+                    <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal" class="btn btn-xs btn-default">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                    @include('medicamento.modal')
+                </td>
+                </form>
                 </td>
             </tr>
             @endforeach
@@ -37,19 +49,17 @@
     </table>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     {{ $medicamentos->links() }}
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 =======
     {{ $medicamentos->links() }}
 >>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
+=======
+    {{ $medicamentos->render() }}
+>>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
 </div>
 
 
-@endsection
-
-@section('scripts')
-<script> 
-  $(".table").DataTable();
-</script>
 @endsection
