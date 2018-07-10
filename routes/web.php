@@ -11,15 +11,13 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< HEAD
-=======
+
 	Route::get('paciente/{id}/consulta/create', 'ConsultaController@create')->name('create_consulta');
 	Route::get('consulta/{id}/nota/create', 'NotaController@create')->name('create_Nota');
 	Route::get('consulta/{id}/receta/create', 'RecetaController@create')->name('create_Receta');
 	Route::post('receta/{id}/addEnfermedad', 'RecetaController@addEnfermedad')->name('add_enfermedad');
 	Route::get('receta/{id}/rmvEnfermedad/{enfermedad_id}', 'RecetaController@rmvEnfermedad')->name('rmv_enfermedad');
 	Route::post('receta/{id}/addEstudio', 'RecetaController@addEstudio')->name('add_estudio');
->>>>>>> parent of 2c91217... Mejoras Consulta
 
 	Route::resources([
 		'estudio'=>'EstudioController',

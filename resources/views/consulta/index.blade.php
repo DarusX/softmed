@@ -14,27 +14,7 @@
                 <th class="text-left">Complementos</th>
             </tr>
         </thead>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
-=======
->>>>>>> parent of 2c91217... Mejoras Consulta
-
-        <tfoot>
-
-        </tfoot>
-
-<<<<<<< HEAD
->>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
-=======
->>>>>>> parent of 2c91217... Mejoras Consulta
         <tbody>
             @foreach($consultas as $consulta)
             <tr>
@@ -62,5 +42,10 @@
         </tbody>
     </table>
 </div>
+@endsection
 
+@section('scripts')
+<script> 
+  $(".table").DataTable();
+</script>
 @endsection

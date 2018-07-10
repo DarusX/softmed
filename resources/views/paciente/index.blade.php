@@ -39,7 +39,12 @@
             @endforeach
         </tbody>
     </table>
-    {{$pacientes->links()}}
 </div>
 
+@endsection
+
+@section('scripts')
+<script> 
+  $(".table").DataTable();
+</script>
 @endsection

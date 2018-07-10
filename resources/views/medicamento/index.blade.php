@@ -14,18 +14,9 @@
                 <th class="text-center">Acciones</th>
             </tr>
         </thead>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
         <tfoot>
         </tfoot>
->>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
         <tbody>
             @foreach($medicamentos as $medicamento)
             <tr>
@@ -47,19 +38,12 @@
             @endforeach
         </tbody>
     </table>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    {{ $medicamentos->links() }}
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
-    {{ $medicamentos->links() }}
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
-    {{ $medicamentos->render() }}
->>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
 </div>
 
+@endsection
 
+@section('scripts')
+<script> 
+  $(".table").DataTable();
+</script>
 @endsection

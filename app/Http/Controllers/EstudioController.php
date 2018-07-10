@@ -15,7 +15,7 @@ class EstudioController extends Controller
     public function index()
     {
         return view('estudio.index')->with([
-            'estudios' => Estudio::paginate(20)
+            'estudios' => Estudio::all()
         ]);
     }
 

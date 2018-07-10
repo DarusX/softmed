@@ -14,23 +14,7 @@
                 <th class="text-center">Acciones</th>
             </tr>
         </thead>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-         
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
-         
-         <tfoot>
-
-    <th colspan=4> {{ $estudios->render() }} </th>
-      
-  </tfoot>
-       
->>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios
+    
         <tbody>
             @foreach($estudios as $estudio)
             <tr>
@@ -48,20 +32,10 @@
         </tbody>
     </table>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 @endsection
 
 @section('scripts')
 <script> 
   $(".table").DataTable();
 </script>
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
-=======
->>>>>>> 2c91217ea8c9cf669324083d04bcd6167962b69e
 @endsection
-=======
-@endsection
->>>>>>> parent of 872c363... refresh con pull, implementacion de data tables y creacion de migracion para la tabla de tipo de usarios

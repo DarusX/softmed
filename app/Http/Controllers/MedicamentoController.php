@@ -15,7 +15,7 @@ class MedicamentoController extends Controller
     public function index()
    {
      return view('medicamento.index')->with([
-            'medicamentos' => Medicamento::orderBy('nombre', 'ASC')->paginate(20)
+            'medicamentos' => Medicamento::all()
         ]);
    }
     /**

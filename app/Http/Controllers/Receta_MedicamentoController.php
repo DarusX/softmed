@@ -16,7 +16,7 @@ class Receta_MedicamentoController extends Controller
     public function index($id)
     {
         return view('receta_medicamento.index')->with([
-            'recetas_medicamentos' => Receta_Medicamento::paginate(20)
+            'recetas_medicamentos' => Receta_Medicamento::all()
             ]);        
     }
 
