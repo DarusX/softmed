@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TipoUsuarios extends Migration
+class Horas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class TipoUsuarios extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_Usuarios', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('descripcion');
-            $table->timestamps();
-        });    }
+        //
+    }
 
     /**
      * Reverse the migrations.
@@ -26,6 +23,6 @@ class TipoUsuarios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_Usuarios');
+        //
     }
 }
