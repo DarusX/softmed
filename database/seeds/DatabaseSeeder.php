@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         factory(App\medicamento::class,30)->create();
         factory(App\enfermedad::class,30)->create();
         factory(App\paciente::class,30)->create();
-
+        factory(App\tipoUsuario::class,4)->create();
     }
 }

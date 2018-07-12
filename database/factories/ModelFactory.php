@@ -12,6 +12,12 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\tipoUsuario::class, function (Faker\Generator $faker) {
+    return [
+        'descripcion' => $faker->name,
+    ];
+});
+
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
