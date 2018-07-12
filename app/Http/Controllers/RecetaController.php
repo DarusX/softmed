@@ -101,9 +101,16 @@ class RecetaController extends Controller
         return redirect()->route('receta.index');
     }
 
-    public function destroy_medicamento($id)
+    public function addMedicamento(Request $request)
+    {        
+        Receta::find($request->receta_id)->medicamentos()->attach($request->medicamento_id, ['dosis' => $request->dosis]);
+        return redirect()->back();
+    }
+
+    public function rmvMedicamento($id, $medicamento_id)
     {
-        Receta::find($id)->medicamentos()->detach($request->medicamento_id);
+        Receta::find($id)->medicamentos()->detach($medicamento_id);
+        return redirect()->back();;
     }
 
     public function addEnfermedad(Request $request)

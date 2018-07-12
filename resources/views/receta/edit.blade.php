@@ -78,7 +78,7 @@
 
 <div class="col-sm-6">
 
-    <form action="{{route('receta_medicamento.store')}}" method="post">
+    <form action="{{route('add_medicamento', $receta->id)}}" method="post">
      {{ csrf_field()}}
 
     <legend>Agregar medicamentacion a la receta</legend>
@@ -121,7 +121,7 @@
                 <td class="text-left">{{ $medicamento->DatosCompletos }}</td>
                 <td class="text-left">{{ $medicamento->pivot->dosis }}</td>
                 <td class="text-left">
-                <a href="" data-target="#modal-delete-{{$medicamento->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
+               <a href="{{ route('rmv_medicamento', ['receta' => $receta->id, 'medicamento' => $medicamento->id])}}" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>                
             
                 </td>
 
@@ -224,6 +224,8 @@
 @section('scripts')
 <script> 
   $(".select2").select2();
-  $(".table").DataTable();
-</script>
+$(".table").DataTable({
+            paging: false,
+            searching: false
+        })</script>
 @endsection
