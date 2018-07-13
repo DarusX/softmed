@@ -12,48 +12,59 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                <i class="fas fa-h-square"></i> {{ config('app.name', 'Laravel') }}
             </a>
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
+            @auth
             <ul class="nav navbar-nav">
-                &nbsp;
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Catálogos
+                        <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{route('enfermedad.index')}}">Enfermedades</a></li>
+                        <li><a href="{{route('estudio.index')}}">Estudios</a></li>
+                        <li><a href="{{route('medicamento.index')}}">Medicamentos</a></li>
+                    </ul>
+                </li>
+                <li><a href=""><i class="fas fa-calendar"></i></a></li>
             </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Paciente">
+                </div>
+                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+            </form>
+            @endauth
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                @if (Auth::guest())
+                @guest
                 <li>
                     <a href="{{ route('login') }}">Entrar</a>
                 </li>
                 <li>
                     <a href="{{ route('register') }}">Registrarse</a>
                 </li>
-                @else
-
+                @endguest
+                @auth
+                <li><a href="/home"><i class="fas fa-tv"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->name }}
                         <span class="caret"></span>
                     </a>
-
                     <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                Salir
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
+                        <li><a href="" class="logout">Salir</a></li>
                     </ul>
                 </li>
-                @endif
+                @endauth
             </ul>
         </div>
     </div>
