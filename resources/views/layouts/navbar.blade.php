@@ -30,6 +30,7 @@
                         <li><a href="{{route('enfermedad.index')}}">Enfermedades</a></li>
                         <li><a href="{{route('estudio.index')}}">Estudios</a></li>
                         <li><a href="{{route('medicamento.index')}}">Medicamentos</a></li>
+                        <li><a href="{{route('usuario.index')}}">Usuarios</a></li>
                     </ul>
                 </li>
                 <li><a href=""><i class="fas fa-calendar"></i></a></li>

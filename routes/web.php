@@ -30,7 +30,8 @@ Route::group(['middleware' => 'auth'], function(){
 		'consulta'=>'ConsultaController',
 		'nota'=>'NotaController',
 		'receta'=>'RecetaController',
-		'receta_medicamento'=>'Receta_MedicamentoController'
-		]);
+		'receta_medicamento'=>'Receta_MedicamentoController',
+		'usuario' => 'UsuarioController'
+	]);
 
 });
