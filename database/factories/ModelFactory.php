@@ -12,11 +12,6 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\tipoUsuario::class, function (Faker\Generator $faker) {
-    return [
-        'descripcion' => $faker->name,
-    ];
-});
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
@@ -32,8 +27,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\medicamento::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->name,
-        'compuesto' => $faker->sentence,
-        'presentacion' => $faker->sentence,
+        'compuesto' => $faker->name,
+        'presentacion' => $faker->name,
     ];
 });
 

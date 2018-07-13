@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,22 @@ class DatabaseSeeder extends Seeder
         factory(App\medicamento::class,30)->create();
         factory(App\enfermedad::class,30)->create();
         factory(App\paciente::class,30)->create();
-        factory(App\tipoUsuario::class,4)->create();
+
+        Role::create([
+            'role' => 'Medico'
+        ])->users()->create([
+            'name' => 'Médico',
+            'email' => 'medico@softmed.com.mx',
+            'password' => bcrypt('123456')
+        ]);
+
+        Role::create([
+            'role' => 'Recepción'
+        ])->users()->create([
+            'name' => 'Recepción',
+            'email' => 'recepcion@softmed.com.mx',
+            'password' => bcrypt('123456')
+        ]);
+
     }
 }
