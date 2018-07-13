@@ -14,8 +14,8 @@ class consulta extends Model {
     	return $this->belongsTo(paciente::class, "paciente_id", "id");
     }
 	
-	public function notas(){
-		return $this->hasMany(nota::class, "consulta_id", "id");
+	public function nota(){
+		return $this->hasOne(nota::class, "consulta_id", "id");
 	}
 
 	public function recetas(){
