@@ -1,7 +1,5 @@
 <?php
 
-use PDF;
-
 Route::get('/','HomeController@index');
 
 
@@ -35,12 +33,12 @@ Route::group(['middleware' => 'auth'], function(){
 		'usuario' => 'UsuarioController'
 	]);
 
+	
+	
+	
+});
 
-	Route::get('pdf', function(){
-		$pdf = PDF::loadView('vista');
-		return $pdf => download ('archivo.pdf');
-	});
-
-
-
+Route::get('pdf', function(){
+	$pdf = \PDF::loadView('vista');
+	return $pdf->download ('archivo.pdf');
 });
