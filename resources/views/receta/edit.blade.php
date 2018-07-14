@@ -175,7 +175,7 @@
             <tr>
                 <td>{{ $estudio->estudio }}</td>
                 <td>
-                    <a href="{{ route('rmv_enfermedad', ['receta' => $receta->id, 'enfermedad' => $enfermedad->id])}}" class="btn btn-xs btn-danger"><i class="fas fa-times"></i></a>
+                    <a href="{{ route('rmv_estudio', ['receta' => $receta->id, 'estudio' => $estudio->id])}}" class="btn btn-xs btn-danger"><i class="fas fa-times"></i></a>
                 </td>
             </tr>
             @endforeach

@@ -131,7 +131,11 @@ class RecetaController extends Controller
         return redirect()->back();
     }
 
-
+    public function rmvEstudio($id, $estudio_id)
+    {
+        Receta::find($id)->estudios()->detach($estudio_id);
+        return redirect()->back();
+    }
 
 
 
