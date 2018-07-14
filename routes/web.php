@@ -1,5 +1,6 @@
 <?php
 
+use PDF;
 
 Route::get('/','HomeController@index');
 
@@ -20,8 +21,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('receta/{id}/addEnfermedad', 'RecetaController@addEnfermedad')->name('add_enfermedad');
 	Route::get('receta/{id}/rmvEnfermedad/{enfermedad_id}', 'RecetaController@rmvEnfermedad')->name('rmv_enfermedad');
 	Route::post('receta/{id}/addEstudio', 'RecetaController@addEstudio')->name('add_estudio');
-	Route::get('receta/{id}/rmvEstudio/{estudio_id}', 'RecetaController@rmvEstudio')->name('rmv_estudio');
-
 
 	Route::resources([
 		'estudio'=>'EstudioController',
@@ -36,9 +35,12 @@ Route::group(['middleware' => 'auth'], function(){
 		'usuario' => 'UsuarioController'
 	]);
 
+
 	Route::get('pdf', function(){
-		$pdf = PDF::loadView ('vista');
+		$pdf = PDF::loadView('vista');
 		return $pdf => download ('archivo.pdf');
 	});
+
+
 
 });
