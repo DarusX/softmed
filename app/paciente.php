@@ -18,4 +18,9 @@ class paciente extends Model {
 	{
 		return $this->paterno . ' ' . $this->materno . ' ' . $this->nombre;
 	}
+
+	public function scopeSearch($query, $nombre)
+	{
+		return $query->where('nombre', 'LIKE', "$nombre%");
+	}
 }
