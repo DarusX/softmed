@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <i class="fas fa-h-square"></i> {{ config('app.name', 'Laravel') }}
+                <i class="fas fa-h-square"></i> {{ config('app.name', 'SoftMed') }}
             </a>
         </div>
 
