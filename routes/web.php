@@ -41,7 +41,4 @@ Route::group(['middleware' => 'auth'], function(){
 	
 });
 
-Route::get('pdf', function(){
-	$pdf = \PDF::loadView('vista');
-	return $pdf->download ('archivo.pdf');
-});
+Route::get('pdf','PdfController@imprimir_receta');

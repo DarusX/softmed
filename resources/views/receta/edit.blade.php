@@ -6,7 +6,7 @@
 </div>
 <div class="col-sm-12">
     <button class="btn btn-warning">
-        <i class="fas fa-print"></i> Imprimir</button>
+        <i class ="fas fa-print"></i> Imprimir</button>
 </div>
 <div class="col-sm-12">
     @if(isset($receta->consulta->nota))
