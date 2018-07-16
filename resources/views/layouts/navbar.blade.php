@@ -70,10 +70,14 @@
         </div>
     </div>
     <script>
-$(document).ready(function(){
+$(document).ready(function()
+{
    $("#search").keyup(function(){
-       var str=  $("#search").val();
-        $.get( "{{ url('paciente/{nombre}) }}"+str, function( data )
+       var str=  $("#search").val(); {
+               $.get( "{{ url('paciente/search?nombre=') }}"+str, function( data ) {
+                   $( "#txtHint" ).html( data );  
+            });
+       }
    });  
 }); 
 </script>

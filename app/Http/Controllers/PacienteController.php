@@ -114,8 +114,7 @@ class PacienteController extends Controller
         }
         else
         {
-            $pacientes = Paciente::where('nombre','LIKE',"%{$search}%")
-                           ->get();
+            $pacientes = Paciente::$query->where('nombre', 'LIKE', "%".$nombre."%")->get();
 
             return view('paciente.index')->with($nombre);
         }
