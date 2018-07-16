@@ -37,7 +37,7 @@
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Paciente">
+                    <input type="text" id="search" class="form-control" placeholder="Paciente" >
                 </div>
                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
             </form>
@@ -69,4 +69,13 @@
             </ul>
         </div>
     </div>
+    <script>
+$(document).ready(function(){
+   $("#search").keyup(function(){
+       var str=  $("#search").val();
+        $.get( "{{ url('paciente/{nombre}) }}"+str, function( data )
+   });  
+}); 
+</script>
+
 </nav>
