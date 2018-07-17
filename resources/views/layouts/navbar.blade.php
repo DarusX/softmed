@@ -74,9 +74,7 @@ $(document).ready(function()
 {
    $("#search").keyup(function(){
        var str=  $("#search").val(); {
-               $.get( "{{ url('paciente/search?nombre=') }}"+str, function( data ) {
-                   $( "#txtHint" ).html( data );  
-            });
+               $.get( "{{ url('paciente/search?nombre=') }}"+str, function( data ));
        }
    });  
 }); 
