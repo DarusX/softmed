@@ -17,9 +17,9 @@ public function imprimir_receta();
         $view =  \View::make($vistaurl, compact('data', 'date'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        
-	$pdf = \PDF::loadView('vista');
-	return $pdf->stream ('archivo.pdf');
+
+	$pdf = \PDF::loadView('pdf.vista',$imprimir_receta);
+	return $pdf->stream ('vista.pdf');
     //
 }
 
