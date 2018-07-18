@@ -5,8 +5,7 @@
     </h1>
 </div>
 <div class="col-sm-12">
-    <button class="btn btn-warning">
-        <i class ="fas fa-print"></i> Imprimir</button>
+    <a href="{{route('receta.imprimir', $receta)}}" target="_blank" class="btn btn-warning"><i class ="fas fa-print"></i> Imprimir</a>
 </div>
 <div class="col-sm-12">
     @if(isset($receta->consulta->nota))

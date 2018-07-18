@@ -9,7 +9,7 @@ use App\medicamento;
 use App\enfermedad;
 use App\nota;
 use App\estudio;
-use Illuminate\Support\Facades\Redirect;
+use PDF;
 
 class RecetaController extends Controller
 {
@@ -21,7 +21,7 @@ class RecetaController extends Controller
     public function index()
     {
         return view('receta.index')->with([
-            'recetas' => Receta::all()
+                'recetas' => Receta::all()
             ]);
     }
 
@@ -99,6 +99,14 @@ class RecetaController extends Controller
     {
         Receta::destroy($id);
         return redirect()->route('receta.index');
+    }
+
+    public function imprimir($id)
+    {
+        //return Receta::with(['medicamentos', 'enfermedades', 'estudios'])->find($id);
+        return PDF::loadView('pdf.receta', [
+            'receta' => Receta::find($id)
+        ])->stream();
     }
 
     public function addMedicamento(Request $request)
