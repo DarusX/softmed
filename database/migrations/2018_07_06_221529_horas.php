@@ -13,7 +13,10 @@ class Horas extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('hora', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('hora');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class Horas extends Migration
      */
     public function down()
     {
-        //
+         Schema::dropIfExists('hora');
     }
 }
