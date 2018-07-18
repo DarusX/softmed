@@ -106,6 +106,8 @@ class PacienteController extends Controller
 
     public function busqueda(Request $request)
     { 
-     return(paciente.index);
+        return view('paciente.index')->with([
+            'pacientes' => Paciente::where('NombreCompleto', 'LIKE', '%' . $request . '%')
+        ]);
     }
 }
