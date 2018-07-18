@@ -37,7 +37,7 @@
             </ul>
             <form class="navbar-form navbar-left" role="search" action="{{route('paciente.index')}}">
                 <div class="form-group">
-                    <input type="text"  class="form-control" placeholder="Paciente" >
+                    <input type="text"  class="form-control" name='nombre' placeholder="Paciente" >
                 </div>
                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
             </form>
