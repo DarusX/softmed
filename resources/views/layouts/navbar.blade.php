@@ -35,9 +35,9 @@
                 </li>
                 <li><a href=""><i class="fas fa-calendar"></i></a></li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" role="search" action="{{route('paciente.index')}}">
                 <div class="form-group">
-                    <input type="text" id="search" class="form-control" placeholder="Paciente" >
+                    <input type="text"  class="form-control" placeholder="Paciente" >
                 </div>
                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
             </form>
@@ -69,15 +69,4 @@
             </ul>
         </div>
     </div>
-    <script>
-$(document).ready(function()
-{
-   $("#search").keyup(function(){
-       var str=  $("#search").val(); {
-               $.get( "{{ url('paciente/search?nombre=') }}"+str, function( data ));
-       }
-   });  
-}); 
-</script>
-
 </nav>

@@ -73,6 +73,7 @@
             dateFormat: "yy-mm-dd"
         })
         $("select").select2()
+        
     </script> 
     @yield('scripts')
 </body>
