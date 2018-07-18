@@ -41,4 +41,4 @@ Route::group(['middleware' => 'auth'], function(){
 	
 });
 
-Route::get('pdf','PdfController@imprimir_receta');
+Route::get('pdf', 'PdfController@imprimir');
