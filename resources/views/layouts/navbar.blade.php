@@ -35,7 +35,7 @@
                 </li>
                 <li><a href=""><i class="fas fa-calendar"></i></a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search" action="{{route('paciente.index')}}">
+            <form class="navbar-form navbar-left" role="search" action="{{route('busqueda')}}">
                 <div class="form-group">
                     <input type="text"  class="form-control" name='nombre' placeholder="Paciente" >
                 </div>

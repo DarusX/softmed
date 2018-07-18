@@ -106,17 +106,6 @@ class PacienteController extends Controller
 
     public function busqueda(Request $request)
     { 
-        $search = $request->nombre;
-
-        if (is_null($search))
-        {
-           return view('paciente.index');        
-        }
-        else
-        {
-            $pacientes = Paciente::$query->where('nombre', 'LIKE', "%".$nombre."%")->get();
-
-            return view('paciente.index')->with($nombre);
-        }
+     return(paciente.index);
     }
 }
