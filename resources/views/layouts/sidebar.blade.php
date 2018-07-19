@@ -10,18 +10,17 @@
     </div>
 <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
     <ul class="list-unstyled">
-        <li><a href="/"> <i class="icon-home"></i>Home </a></li>
-        <li><a href="{{route('paciente.index')}}"> <i class="icon-grid"></i>Pacientes </a></li>
-        <li><a href="{{route('medicamento.index')}}"> <i class="icon-grid"></i>Medicamentos </a></li>
-        <li><a href="{{route('estudio.index')}}"> <i class="icon-grid"></i>Estudios </a></li>
-        <li><a href="{{route('usuario.index')}}"> <i class="icon-grid"></i>Usuarios </a></li>
-        <li><a href="{{route('receta.index')}}"> <i class="icon-grid"></i>Recetas </a></li>
-        <li><a href="{{route('consulta.index')}}"> <i class="icon-grid"></i>Consultas </a></li>
-        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
+        <li><a href="/"> <i class="icon-home"></i>Inicio </a></li>
+        
+        
+        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Catálogos</a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="{{route('consulta.index')}}"> <i class="icon-grid"></i>Consultas </a></li>
+                <li><a href="{{route('paciente.index')}}"> <i class="icon-grid"></i>Pacientes </a></li>
+                <li><a href="{{route('medicamento.index')}}"> <i class="icon-grid"></i>Medicamentos </a></li>
+                <li><a href="{{route('estudio.index')}}"> <i class="icon-grid"></i>Estudios </a></li>
+                <li><a href="{{route('usuario.index')}}"> <i class="icon-grid"></i>Usuarios </a></li>
+                <li><a href="{{route('receta.index')}}"> <i class="icon-grid"></i>Recetas </a></li>
             </ul>
         </li>
     <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
