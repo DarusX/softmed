@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="{{asset('theme/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('theme/bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="{{asset('theme/vendor/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('theme/font-awesome/css/font-awesome.min.css')}}">
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="{{asset('theme/css/fontastic.css')}}">
     <!-- Google fonts - Poppins -->
@@ -27,6 +27,9 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" />
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
         body{
@@ -42,12 +45,12 @@
   <body>
       @yield('content')
     <!-- JavaScript files-->
-    <script src="{{asset('theme/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('theme/vendor/popper.js/umd/popper.min.js')}}"> </script>
-    <script src="{{asset('theme/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('theme/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
-    <script src="{{asset('theme/vendor/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('theme/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('theme/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('theme/popper.js/umd/popper.min.js')}}"> </script>
+    <script src="{{asset('theme/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('theme/jquery.cookie/jquery.cookie.js')}}"> </script>
+    <script src="{{asset('theme/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('theme/jquery-validation/jquery.validate.min.js')}}"></script>
     <script src="{{asset('theme/js/front.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>

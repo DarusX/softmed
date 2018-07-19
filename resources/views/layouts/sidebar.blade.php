@@ -16,6 +16,7 @@
         <li><a href="{{route('estudio.index')}}"> <i class="icon-grid"></i>Estudios </a></li>
         <li><a href="{{route('usuario.index')}}"> <i class="icon-grid"></i>Usuarios </a></li>
         <li><a href="{{route('receta.index')}}"> <i class="icon-grid"></i>Recetas </a></li>
+        <li><a href="{{route('consulta.index')}}"> <i class="icon-grid"></i>Consultas </a></li>
         <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Page</a></li>
