@@ -31,6 +31,6 @@ class paciente extends Model {
 	public function getEdadAttribute() 
 	{
 		$edad = Carbon::parse($this->nacimiento)->age;
-		dump($edad);
+		return($edad);
 	}
 }
