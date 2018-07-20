@@ -30,6 +30,9 @@ class paciente extends Model {
 
 	public function getEdadAttribute() 
 	{
-		var_dump(Carbon::createFromDate(2000, 5, 21)->age);
-	} 
+		$fecha = Carbon::parse("nacimiento")->format('Y,m,d');
+		$date1 = Carbon::now()->format('Y,m,d');
+		echo $date1->diffInYears($fecha);
+		return($edad);
+	}
 }
