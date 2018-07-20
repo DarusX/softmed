@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use App\Hora;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +33,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Recepción',
             'email' => 'recepcion@softmed.com.mx',
             'password' => bcrypt('123456')
+        ]);
+        Hora::create ([
+            'hora'=> '08:00',
         ]);
 
     }

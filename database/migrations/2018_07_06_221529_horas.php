@@ -13,9 +13,9 @@ class Horas extends Migration
      */
     public function up()
     {
-        Schema::create('hora', function (Blueprint $table) {
+        Schema::create('horas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hora');
+            $table->time('hora');
         });
     }
 
@@ -26,6 +26,6 @@ class Horas extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('hora');
+         Schema::dropIfExists('horas');
     }
 }
