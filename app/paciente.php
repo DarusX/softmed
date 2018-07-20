@@ -28,7 +28,7 @@ class paciente extends Model {
 		->orWhere('materno', 'LIKE', '%' . $nombre . '%');
 	}
 
-	public function getEdad() 
+	public function getEdadAttribute() 
 	{
 		var_dump(Carbon::createFromDate(2000, 5, 21)->age);
 	} 

@@ -35,7 +35,7 @@
                                                 @foreach($pacientes as $paciente)
                                                 <tr>
                                                     <td>{{ $paciente->nombreCompleto }}</td>
-                                                    <td>{{ $paciente->getEdad() }}</td>
+                                                    <td>{{ $paciente->edad }}</td>
                                                     <td>
                                                         <a href="{{ route('paciente.edit', $paciente)}}" class="btn btn-xs btn-primary">
                                                             <i class="fas fa-pen"></i>
