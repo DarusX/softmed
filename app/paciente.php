@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class paciente extends Model {
 
@@ -28,7 +29,7 @@ class paciente extends Model {
 
 	public function Edad()
 	{
-		
+		$edad = Carbon::createFromDate($paciente->nacimiento)->age;
 	}
 	
 }
