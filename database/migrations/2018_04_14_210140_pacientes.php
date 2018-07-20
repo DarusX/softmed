@@ -18,7 +18,7 @@ class Pacientes extends Migration
             $table->string('nombre');
             $table->string('paterno');
             $table->string('materno');
-            $table->string('nacimiento');
+            $table->date('nacimiento');
             $table->string('curp', 20);
             $table->string('domicilio');
             $table->timestamps();

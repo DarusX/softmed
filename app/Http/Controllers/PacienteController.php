@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 use App\paciente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Carbon\Carbon;
-
 
 class PacienteController extends Controller
 {

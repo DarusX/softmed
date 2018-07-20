@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use dateTime;
 
 class paciente extends Model {
 
@@ -27,9 +28,8 @@ class paciente extends Model {
 		->orWhere('materno', 'LIKE', '%' . $nombre . '%');
 	}
 
-	public function Edad()
+	public function getEdad() 
 	{
-		$edad = Carbon::createFromDate($paciente->nacimiento)->age;
-	}
-	
+		var_dump(Carbon::createFromDate(2000, 5, 21)->age);
+	} 
 }
