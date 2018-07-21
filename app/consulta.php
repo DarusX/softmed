@@ -8,7 +8,7 @@ class consulta extends Model {
 
     protected $table = 'consultas';
 
-    protected $fillable = ["paciente_id",'fecha', 'hora'];
+    protected $fillable = ["paciente_id",'fecha', 'hora_id'];
 
     public function paciente() {
     	return $this->belongsTo(paciente::class, "paciente_id", "id");
@@ -20,5 +20,8 @@ class consulta extends Model {
 
 	public function recetas(){
 		return $this->hasMany(receta::class, "consulta_id", "id");
+	}
+	public function hora(){
+		return $this->hasOne(hora::class,"hora_id","id");
 	}
 }
