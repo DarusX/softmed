@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\paciente;
 use App\consulta;
+use App\Hora;
 use Illuminate\Http\Request;
 
 
@@ -28,8 +29,9 @@ class ConsultaController extends Controller
     public function create($id)
     {
         return view('consulta.create')->with([
-            'paciente'=> Paciente::find($id)
-        ]);
+            'paciente'=> Paciente::find($id),
+            'horas'=>Hora::all()
+            ]);
     }
 
     /**
@@ -67,7 +69,8 @@ class ConsultaController extends Controller
     public function edit($id)
     {        
         return view('consulta.edit')->with([
-            'consulta'=>Consulta::find($id)
+            'consulta'=>Consulta::find($id),
+            'hora'=>Hora::all()
         ]);
     }
 

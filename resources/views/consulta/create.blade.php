@@ -34,12 +34,13 @@
 											</div>
 										</div>
 							
-										<div class="col-sm-6">
-											<div class="form-group {{$errors->has('hora')? ' has-error':''}}">
-												<label class="control-label" for="">Hora</label>
-												<input type="time" name="hora" class="form-control" value="{{old('hora')}}">
-											</div>
-										</div>
+                                        <div class="col-lg-5">
+                                                <div class="form-group">
+                                                    <select id="hora" name="hora_id" class="select2 form-control">
+                                                        <option value="Aqui van los corchetes para id hora"> Aqui se mostraran las horas </option>
+                                                    </select>
+                                                </div>
+                                            </div>
 							
 										<div class="col-sm-12">
 											<div class="form-group">

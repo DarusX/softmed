@@ -35,8 +35,34 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456')
         ]);
         Hora::create ([
-            'hora'=> '08:00',
+            'hora'=> '08:00'
         ]);
-
+        Hora::create ([
+            'hora'=> '09:00'
+        ]);
+        Hora::create ([
+            'hora'=> '10:00'
+        ]);
+        Hora::create ([
+            'hora'=> '11:00'
+        ]);
+        Hora::create ([
+            'hora'=> '12:00'
+        ]);
+        Hora::create ([
+            'hora'=> '13:00'
+        ]);
+        Hora::create ([
+            'hora'=> '14:00'
+        ]);
+        Hora::create ([
+            'hora'=> '15:00'
+        ]);
+        Hora::create ([
+            'hora'=> '16:00'
+        ]);
+        Hora::create ([
+            'hora'=> '17:00'
+        ]);
     }
 }

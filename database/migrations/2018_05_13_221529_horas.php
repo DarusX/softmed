@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -16,6 +15,7 @@ class Horas extends Migration
         Schema::create('horas', function (Blueprint $table) {
             $table->increments('id');
             $table->time('hora');
+            $table->timestamps();
         });
     }
 

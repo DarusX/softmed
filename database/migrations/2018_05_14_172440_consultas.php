@@ -17,13 +17,12 @@ class Consultas extends Migration
             $table->increments('id');
             $table->integer('paciente_id')->unsigned();
             $table->string('fecha');
-            $table->time('hora_id');
+            $table->integer('hora_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->foreign('hora_id')->references('id')->on('horas');
-            
-
+        
         });
     }
 
