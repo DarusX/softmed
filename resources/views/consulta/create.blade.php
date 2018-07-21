@@ -36,8 +36,10 @@
 							
                                         <div class="col-lg-5">
                                                 <div class="form-group">
-                                                    <select id="hora" name="hora_id" class="select2 form-control">
-                                                        <option value="Aqui van los corchetes para id hora"> Aqui se mostraran las horas </option>
+                                                    <select id="hora_id" class="select2 form-control">
+                                                        @foreach($horas as $hora)
+                                                        <option value="{{$hora->id}}"> {{$hora->hora}} </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
