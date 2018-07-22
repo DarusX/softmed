@@ -22,6 +22,6 @@ class consulta extends Model {
 		return $this->hasMany(receta::class, "consulta_id", "id");
 	}
 	public function hora(){
-		return $this->hasOne(hora::class,"hora_id","id");
+		return $this->belongsTo(hora::class, "hora_id", "id");
 	}
 }

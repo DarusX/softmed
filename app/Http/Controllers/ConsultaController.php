@@ -30,7 +30,7 @@ class ConsultaController extends Controller
     {
         return view('consulta.create')->with([
             'paciente'=> Paciente::find($id),
-            'horas'=>Hora::all()
+            'Horas'=>Hora::all()
             ]);
     }
 

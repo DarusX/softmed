@@ -39,7 +39,7 @@
                                                 <tr>
                                                     <td>{{$consulta->paciente->nombreCompleto}}</td>
                                                     <td>{{ $consulta->fecha }}</td>
-                                                    <td>{{ $consulta->hora }}</td>
+                                                    <td>{{ $consulta->hora->hora }}</td>
                                                     <td>
                                                         <a href="{{ route('consulta.edit', $consulta)}}" class="btn btn-xs btn-primary">
                                                             <i class="fas fa-pencil-alt"></i>

@@ -36,8 +36,8 @@
 							
                                         <div class="col-lg-5">
                                                 <div class="form-group">
-                                                    <select id="hora_id" class="select2 form-control">
-                                                        @foreach($horas as $hora)
+                                                    <select id="hora" name="hora_id" class="select2 form-control">
+                                                        @foreach($Horas as $hora)
                                                         <option value="{{$hora->id}}"> {{$hora->hora}} </option>
                                                         @endforeach
                                                     </select>
