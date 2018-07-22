@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hora extends Model
 {
-    protected $fillable =['hora'];
+    protected $table = 'horas';
 
-    public $timestamps = false;
+    protected $fillable = ['hora'];
+
+    public function consulta() {
+    	return $this->belongsTo(consulta::class, "hora_id", "id");
+    }
 }
