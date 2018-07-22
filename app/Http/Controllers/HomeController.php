@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\consulta;
-use Carbon\carbon;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -25,9 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $today = Carbon::today()->format('Y-m-d');
         return view('home')->with([
-        'consultas' => Consulta::where('fecha', '=', $today)->get()
+            'consultas' => Consulta::whereDate('fecha', '=', Carbon::today())->get()
         ]);
     }
 }
