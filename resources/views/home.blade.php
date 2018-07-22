@@ -111,6 +111,8 @@
         </div>
         </section>
         <!-- Projects Section-->
+        <h3 class="h3">{{'$today'}}</h3>
+
         <section class="projects no-padding-top">
         <div class="container-fluid">
         <div class="table-responsive">
