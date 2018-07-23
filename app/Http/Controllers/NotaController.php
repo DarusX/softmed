@@ -40,7 +40,7 @@ class NotaController extends Controller
     public function store(Request $request)
     {
         Nota::create($request->all());
-        return redirect()->back();
+        return redirect()->route('home')->with('message', 'Nota Creada');;
     }
 
     /**

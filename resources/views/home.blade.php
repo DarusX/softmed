@@ -190,6 +190,8 @@
                                         <div role="progressbar" style="width: 45%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
                                     </div>
                                 </div>
+                                <div>
+                                <a href="{{route('create_Nota', $consulta)}}" class="btn btn-xs btn-default"><i class="fas fa-notes-medical"></i></a>
                             </div>
                         </div>
                     </div>

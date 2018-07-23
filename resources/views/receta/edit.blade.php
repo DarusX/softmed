@@ -23,27 +23,6 @@
                                 <div class="card-body">
                                     <a href="{{route('receta.imprimir', $receta)}}" target="_blank" class="btn btn-warning">
                                         <i class="fas fa-print"></i> Imprimir</a>
-                                    @if(isset($receta->consulta->nota))
-                                    <h4>
-                                        <strong>Nota</strong>
-                                    </h4>
-                                    <p>{{$receta->consulta->nota->nota}}</p>
-                                    <a href="{{route('nota.destroy', $receta->consulta->nota)}}" class="btn btn-danger destroy">
-                                        <i class="fas fa-times"></i> Eliminar</a>
-                                    @else
-                                    <form action="{{route('nota.store')}}" method="post">
-                                        {{ csrf_field()}}
-                                        <input type="hidden" name="consulta_id" value="{{$receta->consulta_id}}">
-                                        <div class="form-group">
-                                            <label for="">Nota</label>
-                                            <textarea name="nota" rows="5" class="form-control">{{old('nota')}}</textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">
-                                                <i class="fas fa-save"></i> Guardar</button>
-                                        </div>
-                                    </form>
-                                    @endisset
                                 </div>
                             </div>
                         </div>

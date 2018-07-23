@@ -43,6 +43,11 @@
     </style>
   </head>
   <body>
+  @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
       @yield('content')
     <!-- JavaScript files-->
     <script src="{{asset('theme/jquery/jquery.min.js')}}"></script>
@@ -96,6 +101,7 @@
         $("select").select2()
     </script> 
     @yield('scripts')
+   
 </body>
 
 </html>

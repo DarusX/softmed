@@ -11,7 +11,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('paciente/{id}/consulta/create', 'ConsultaController@create')->name('create_consulta');
-	Route::get('consulta/{id}/nota/create', 'NotaController@create')->name('create_Nota');
+	Route::get('/{id}/nota/create', 'NotaController@create')->name('create_Nota');
 	Route::get('consulta/{id}/receta/create', 'RecetaController@create')->name('create_Receta');
 	Route::get('receta/{id}/imprimir', 'RecetaController@imprimir')->name('receta.imprimir');
 	Route::post('receta/{id}/addMedicamento', 'RecetaController@addMedicamento')->name('add_medicamento');
