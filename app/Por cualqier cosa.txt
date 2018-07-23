@@ -19,3 +19,10 @@
                                         </div>
                                     </form>
                                     @endisset
+
+///////////////////////propuesta/////////////////
+ @if(isset($receta->consulta->nota))
+                     <a href="{{route('create_Nota', $consulta)}}" class="btn btn-xs btn-default"><i class="fas fa-notes-medical"></i></a>
+                     @else
+                    <a href="{{ route('nota.edit', $nota)}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
+ @endisset
