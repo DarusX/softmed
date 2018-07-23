@@ -169,7 +169,7 @@
                             <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
                                 <div class="project-title d-flex align-items-center">
                                     <div class="image has-shadow">
-                                        <img src="{{asset('img/project-1.jpg')}}" alt="..." class="img-fluid">
+                                        <img src="{{asset('theme/img/avatar-6.jpg')}}" alt="..." class="img-fluid">
                                     </div>
                                     <div class="text">
                                         <h3 class="h4">{{$consulta->paciente->nombre}}</h3>
