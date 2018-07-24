@@ -60,6 +60,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+
     <script>
         $.ajaxSetup({
             headers: {
@@ -99,6 +101,9 @@
             dateFormat: "yy-mm-dd"
         })
         $("select").select2()
+
+        CKEDITOR.replace( 'nota' );
+
     </script> 
     @yield('scripts')
    

@@ -9,7 +9,9 @@
         "barryvdh/laravel-dompdf": "^0.8.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "nesbot/carbon": "~1.14"
+        "nesbot/carbon": "~1.14",
+        "ckeditor/ckeditor": "4.*"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
