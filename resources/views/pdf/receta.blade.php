@@ -19,7 +19,7 @@
 <body>
 
 <h3>Receta del paciente {{$receta->consulta->paciente->nombreCompleto}}</h3>
-
+<h3>Expedida por la Lic. En Medicina General. Cecilia Jimenez Garcia</h3>
 	<table>
 		<thead>
 			<tr>
