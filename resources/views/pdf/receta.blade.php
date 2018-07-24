@@ -17,6 +17,9 @@
 	</style>
 </head>
 <body>
+
+<h3>Receta del paciente {{$receta->consulta->paciente->nombreCompleto}}</h3>
+
 	<table>
 		<thead>
 			<tr>
