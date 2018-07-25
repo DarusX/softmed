@@ -116,7 +116,7 @@ class PacienteController extends Controller
     public function expediente($paciente)
     {
         return view('consulta.index')->with([
-                'paciente' => consulta::where('paciente_id', '=', $paciente)->get()
+                'consultas' => consulta::where('paciente_id', '=', $paciente)->get()
             ]);
     }
 }
