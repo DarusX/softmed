@@ -21,6 +21,8 @@
                 <li><a href="{{route('estudio.index')}}"> <i class="icon-grid"></i>Estudios </a></li>
                 <li><a href="{{route('usuario.index')}}"> <i class="icon-grid"></i>Usuarios </a></li>
                 <li><a href="{{route('receta.index')}}"> <i class="icon-grid"></i>Recetas </a></li>
+                <li><a href="{{route('nota.index')}}"> <i class="icon-grid"></i>Notas </a></li>
+
             </ul>
         </li>
     <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>

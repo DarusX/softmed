@@ -24,7 +24,7 @@
                             <input type="hidden" name="consulta_id" value="{{$consulta->id}}">
 
                             <textarea name="nota" rows="10" cols="40">Escribe aqui las notas relacionadas con la consulta</textarea>
-
+                            
                             <div class="form-group">
                                 <button type="submit" class="btn btn-info">Agregar</button>
                                 <a href="{{ URL::previous() }}" class="btn btn-danger" role="button">Cancelar</a>
