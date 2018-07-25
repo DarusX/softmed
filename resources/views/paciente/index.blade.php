@@ -46,6 +46,11 @@
                                                         <a href="{{ route('create_consulta', $paciente)}}" class="btn btn-xs btn-info">
                                                             <i class="fas fa-calendar-alt"></i>
                                                         </a>
+                                                        <a href="{{ route('expediente', $paciente)}}" class="btn btn-xs btn-info">
+                                                        <i class="fas fa-address-book"></i>
+
+
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 @endforeach

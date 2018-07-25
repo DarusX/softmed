@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\paciente;
+use App\consulta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -110,5 +111,12 @@ class PacienteController extends Controller
             'pacientes' => Paciente::search($request->query('nombre'))
             ->get()
         ]);
+    }
+
+    public function expediente($paciente)
+    {
+        return view('consulta.index')->with([
+                'paciente' => consulta::where('paciente_id', '=', $paciente)->get()
+            ]);
     }
 }

@@ -144,9 +144,5 @@ class RecetaController extends Controller
         Receta::find($id)->estudios()->detach($estudio_id);
         return redirect()->back();
     }
-
-
-
-
 }
 

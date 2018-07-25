@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('receta/{id}/addEstudio', 'RecetaController@addEstudio')->name('add_estudio');
 	Route::get('receta/{id}/rmvEstudio/{enfermedad_id}', 'RecetaController@rmvEstudio')->name('rmv_estudio');
 	Route::get('paciente/search','PacienteController@busqueda')->name('busqueda');
+	Route::get('paciente/{paciente}/expedientes', 'PacienteController@expediente')->name('expediente');
 	        
 
 	Route::resources([
