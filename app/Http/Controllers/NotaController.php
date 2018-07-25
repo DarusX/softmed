@@ -89,6 +89,6 @@ class NotaController extends Controller
     public function destroy($id)
     {
         Nota::destroy($id);
-        return redirect()->back();
+        return redirect()->route('nota.index');
     }
 }
