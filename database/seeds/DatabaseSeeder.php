@@ -34,6 +34,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'recepcion@softmed.com.mx',
             'password' => bcrypt('123456')
         ]);
+
+        Role::create([
+            'role' => 'Paciente'
+        ]);
+
         Hora::create ([
             'hora'=> '08:00'
         ]);
