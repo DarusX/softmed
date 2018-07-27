@@ -21,7 +21,13 @@ class consulta extends Model {
 	public function recetas(){
 		return $this->hasMany(receta::class, "consulta_id", "id");
 	}
+	
 	public function hora(){
 		return $this->belongsTo(hora::class, "hora_id", "id");
+	}
+
+	public function getFecha_HoraAttribute(){
+		$dateTime = Carbon::parse($this->fecha, hora);
+		return($dateTime);
 	}
 }
