@@ -21,7 +21,7 @@
                       <h3 class="h4">{{$consulta->fecha}}</h3>
                     </div>
                     <div class="card-body">
-                      <p>{{$consulta->nota->nota}}</p>
+                      <p> {!!$consulta->nota->nota!!}</p>
                     </div>
                   </div>
                 </div>
