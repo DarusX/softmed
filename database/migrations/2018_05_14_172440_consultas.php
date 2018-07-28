@@ -19,7 +19,7 @@ class Consultas extends Migration
             $table->string('fecha');
             $table->integer('hora_id')->unsigned();
             $table->timestamps();
-
+            $table->unique(['fecha', 'hora_id']);
             $table->foreign('paciente_id')->references('id')->on('pacientes');
             $table->foreign('hora_id')->references('id')->on('horas');
         
