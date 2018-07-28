@@ -44,7 +44,7 @@
                                                         <a href="{{ route('consulta.edit', $consulta)}}" class="btn btn-xs btn-primary">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
-                                                        <a href="{{ route('consulta.destroy', $consulta)}}" class="btn btn-xs btn-danger">
+                                                        <a href="{{ route('consulta.destroy', $consulta)}}" class="btn btn-xs btn-danger destroy">
                                                             <i class="fas fa-times"></i>
                                                         </a>
                                                     </td>
