@@ -51,6 +51,7 @@ $factory->define(App\paciente::class, function (Faker\Generator $faker) {
         'materno' => $faker->name,
         'nacimiento' => $faker->date,
         'curp' => $faker->word,
+        'email' => $faker->safeEmail,
         'domicilio' => $faker->address,
     ];
 });
