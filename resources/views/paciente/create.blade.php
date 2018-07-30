@@ -29,7 +29,12 @@
       <label for="">Clave Única de Registro de Poblacion (Curp)</label>
       <input type="text" name="curp" class="form-control" value="{{old('curp')}}">
     </div>
-  
+    
+    <div class="form-group {{$errors->has('email')? ' has-error':''}}">
+      <label for="">Correo Electronico</label>
+      <input type="email" name="email" class="form-control" value="{{old('email')}}">
+    </div>
+    
     <div class="form-group {{$errors->has('domicilio')? ' has-error':''}}">
       <label for="">Domicilio</label>
       <input type="text" name="domicilio" class="form-control" value="{{old('domicilio')}}">

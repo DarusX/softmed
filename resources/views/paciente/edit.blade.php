@@ -33,6 +33,11 @@
       <input type="text" name="curp" class="form-control" value="{{$paciente->curp}}">
     </div>
   
+    <div class="form-group {{$errors->has('email')? ' has-error':''}}">
+      <label for="">Correo Electronico</label>
+      <input type="email" name="email" class="form-control" value="{{$paciente->email}}">
+    </div>
+    
     <div class="form-group {{$errors->has('domicilio')? ' has-error':''}}">
       <label for="">Domicilio</label>
       <input type="text" name="domicilio" class="form-control" value="{{$paciente->domicilio}}">

@@ -20,6 +20,7 @@ class Pacientes extends Migration
             $table->string('materno');
             $table->string('nacimiento');
             $table->string('curp', 20);
+            $table->string('email')->unique();
             $table->string('domicilio');
             $table->timestamps();
         });

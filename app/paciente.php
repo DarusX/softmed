@@ -10,7 +10,7 @@ class paciente extends Model {
 
     protected $table = 'pacientes';
 
-    protected $fillable = ['nombre, paterno, materno, nacimiento, curp, domicilio'];
+    protected $fillable = ['nombre, paterno, materno, nacimiento, curp, email, domicilio'];
 	
 	public function consultas(){
 		return $this->hasMany(consulta::class, "paciente_id", "id");

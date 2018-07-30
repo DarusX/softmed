@@ -20,6 +20,7 @@
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
                                     <h3 class="h4">Pacientes</h3>
+                                    <a href="{{route('paciente.create')}}" class="btn btn-default">Nuevo</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
