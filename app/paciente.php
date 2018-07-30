@@ -33,4 +33,9 @@ class paciente extends Model {
 		$edad = Carbon::parse($this->nacimiento)->age;
 		return($edad);
 	}
+
+	public function usuario()
+	{
+		return $this->hasOne(users::class, 'email', 'email');
+	}
 }
