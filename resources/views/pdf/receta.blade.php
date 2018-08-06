@@ -24,7 +24,7 @@
 
 <div>
 	<h3>Lic. Cecilia Jimenez Garcia</h3>
-	<img src="{{ asset('img/logo.png') }} ">
+	<img src="{{public_path() . '/img/logo.png'}}">
 
 	<br>
 	<h3>Médico General</h3>
