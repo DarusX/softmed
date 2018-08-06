@@ -14,12 +14,29 @@
 		table{
 			width: 100%;
 		}
+		hr {
+ 			 height: 10px;
+  			background-color: black;
+		}
 	</style>
 </head>
 <body>
 
-<h3>Receta del paciente {{$receta->consulta->paciente->nombreCompleto}}</h3>
-<h3>Expedida por la Lic. En Medicina General. Cecilia Jimenez Garcia</h3>
+<div>
+	<h3>Lic. Cecilia Jimenez Garcia</h3>
+	<img src="{{ asset('img/logo.png') }} ">
+
+	<br>
+	<h3>Médico General</h3>
+</div>
+<div>
+	<span style="float:right">
+		<h3>Fecha: {{$receta->consulta->fecha}}</h3>
+	</span> <h3>Paciente: {{$receta->consulta->paciente->nombreCompleto}}</h3>
+</div>
+
+
+
 	<table>
 		<thead>
 			<tr>

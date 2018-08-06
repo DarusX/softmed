@@ -36,6 +36,6 @@ class paciente extends Model {
 
 	public function usuario()
 	{
-		return $this->hasOne(users::class, 'email', 'email');
+		return $this->hasOne(User::class, 'email', 'email');
 	}
 }

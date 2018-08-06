@@ -37,7 +37,8 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        user::create($request->all());
+        return redirect()->route('paciente.index');
     }
 
     /**

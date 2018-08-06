@@ -51,7 +51,11 @@
                                                         </a>
                                                         <a href="{{ route('expediente', $paciente)}}" class="btn btn-xs btn-info">
                                                         <i class="fas fa-address-book"></i>
-
+                                                        
+                                                        @if(isset($paciente->usuario))
+                                                        @else
+                                                            <a href="{{ route('create_user', $paciente)}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
+                                                        @endisset
 
                                                         </a>
                                                     </td>

@@ -22,6 +22,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('receta/{id}/rmvEstudio/{enfermedad_id}', 'RecetaController@rmvEstudio')->name('rmv_estudio');
 	Route::get('paciente/search','PacienteController@busqueda')->name('busqueda');
 	Route::get('paciente/{paciente}/expedientes', 'PacienteController@expediente')->name('expediente');
+	Route::get('paciente/{paciente}/create_user', 'UsuarioController@store')->name('create_user');
+
 	        
 
 	Route::resources([
