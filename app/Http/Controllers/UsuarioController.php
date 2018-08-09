@@ -36,10 +36,14 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $paciente)
+    public function store(Request $request)
     {
-        user::create($paciente->all());
-        return redirect()->route('paciente.index');
+        {
+            $paciente = new user;
+            $paciente->nombre = $request->name;
+            $paciente->email = $request->email;
+            $paciente->save();
+        }
     }
 
     /**
