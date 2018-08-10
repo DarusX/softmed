@@ -8,7 +8,6 @@
     <table class="table table-striped" id="MyTable">
         <thead>
             <tr>
-                <th class="text-center">ID</th>
                 <th class="text-center">Fecha</th>
                 <th class="text-center">Paciente</th>
                 <th class="text-left">Edicion</th>
@@ -18,7 +17,6 @@
         <tbody>
             @foreach($recetas as $receta)
             <tr>
-                <td class="text-center">{{ $receta->id }}</td>
                 <td class="text-center">{{ $receta->consulta->start_date }}</td>
                 <td class="text-center">{{ $receta->consulta->paciente->nombreCompleto }}</td>
                 <td class="text-left">
