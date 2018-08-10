@@ -19,7 +19,7 @@
             @foreach($recetas as $receta)
             <tr>
                 <td class="text-center">{{ $receta->id }}</td>
-                <td class="text-center">{{ $receta->fecha }}</td>
+                <td class="text-center">{{ $receta->consulta->start_date }}</td>
                 <td class="text-center">{{ $receta->consulta->paciente->nombreCompleto }}</td>
                 <td class="text-left">
                 <a href="{{ route('receta.edit', ['receta' => $receta->id])}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>

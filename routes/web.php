@@ -1,6 +1,10 @@
 <?php
 
-Route::get('/','HomeController@index')->name('home');
+Route::get('/', function(){
+	return redirect()->route('login');
+});
+
+Route::get('/home','HomeController@index')->name('home');
 
 
 
@@ -37,5 +41,10 @@ Route::group(['middleware' => 'auth'], function(){
 		'receta'=>'RecetaController',
 		'receta_medicamento'=>'Receta_MedicamentoController',
 		'usuario' => 'UsuarioController'
+	]);
+	Route::resource('usuario', 'UsuarioController', [
+		'except' => [
+			'store'
+		]
 	]);
 });

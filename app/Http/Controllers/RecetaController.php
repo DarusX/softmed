@@ -32,9 +32,11 @@ class RecetaController extends Controller
      */
     public function create($id)
     {
-        return view('receta.create')->with([
-        'consulta'=> Consulta::find($id)
+
+        $receta = Receta::create([
+            'consulta_id' => $id
         ]);
+        return redirect()->route('receta.edit', $receta);
     }
 
     /**
@@ -45,8 +47,8 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        Receta::create($request->all());
-        return redirect()->route('receta.index');
+        $receta = Receta::create($request->all());
+        return redirect()->route('receta.edit', $receta);
     }
 
     /**

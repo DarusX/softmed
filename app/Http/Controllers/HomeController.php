@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\consulta;
 use Carbon\Carbon;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home')->with([
-            'consultas' => Consulta::whereDate('fecha', '=', Carbon::today())->get()
-        ]);
+        return ['data' => Consulta::all()];
+        if (Auth::user()->role_id == 1) {
+            return view('home')->with([
+                'consultas' => Consulta::whereDate('fecha', '=', Carbon::today())->get()
+            ]);
+            # code...
+        } else {
+            # code...
+        }
+        
     }
 }

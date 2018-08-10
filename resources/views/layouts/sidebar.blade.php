@@ -9,6 +9,7 @@
         </div>
     </div>
 <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+    @if(Auth::user()->role_id == 1)
     <ul class="list-unstyled">
         <li><a href="/"> <i class="icon-home"></i>Inicio </a></li>
         
@@ -26,7 +27,10 @@
             </ul>
         </li>
     <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
-    </ul><span class="heading">Extras</span>
+    </ul>
+    @endif
+    
+    <span class="heading">Extras</span>
     <ul class="list-unstyled">
         <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
         <li> <a href="#"> <i class="icon-screen"></i>Demo </a></li>
