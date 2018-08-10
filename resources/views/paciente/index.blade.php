@@ -19,7 +19,6 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
-                                    <h3 class="h4">Pacientes</h3>
                                 </div>
                                 <div class="card-header d-flex align-items-center">
                                     <a href="{{route('paciente.create')}}" class="btn btn-default">Nuevo Paciente</a>
