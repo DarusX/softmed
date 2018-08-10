@@ -70,6 +70,7 @@ class ConsultaController extends Controller
     {        
         return view('consulta.edit')->with([
             'consulta'=>Consulta::find($id),
+            'Horas'=>Hora::all()
         ]);
     }
 
