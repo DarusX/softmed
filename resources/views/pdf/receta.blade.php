@@ -13,38 +13,42 @@
 		}
 		body {
 			font-family: 'Open Sans', sans-serif;
-			font-size: 11px;
+			font-size: 12px;
 		}
 		img{
-			max-height: 1in;
+			width:70px;
+			height: 70px;
 		}
 		table {
 			width: 100%;
+			background-color:antiquewhite;
 		}
-
 		hr {
-			height: 10px;
+			height: 2px;
 			width: 100%;
-			background-color: black;
-		}
+			background-color: blue;
+		}		
+
 	</style>
 </head>
 
 <body>
 
 	<div>
-		<h3>Lic. Cecilia Jimenez Garcia</h3>
-		<img src="{{public_path() . '/img/logo.png'}}">
+		<span style="float:right">
+		<p><h3>Lic. Cecilia Jiménez</h3></p>
+		<p><h3>Médico General (ced.prof:1234)</h3></p>
+		<p><h3>Universidad del valle</h3></p>
+		</span>
+		<img src="{{public_path() . '/img/logo.png'}} ">
+	<hr>
+	</div>	
 
-		<br>
-		<h3>Médico General</h3>
-	</div>
 	<div>
 		<span style="float:right">
 			<h3>Fecha:{{\Carbon\carbon::now()}}</h3>
 		</span>
-		<h3>Paciente: {{$receta->consulta->paciente->nombreCompleto}}</h3>
-
+		<u><h3>Paciente: {{$receta->consulta->paciente->nombreCompleto}}</h3></u>
 	</div>
 	<table>
 		<thead>
@@ -96,7 +100,22 @@
 			@endforeach
 		</tbody>
 	</table>
+	<div>
+				<i><h5 align="right">Firma:____________________________</h5></i>
+	</div>
 	<hr>
+	<div>
+			<table>
+					<thead>
+						<tr>
+							<th>Dirección: Av. De los rios #13</th>
+							<th>Telefono:3-50-11-12</th>
+							<th>Correo: medico@softmed.mx</th>
+						</tr>
+					</thead>
+			</table>
+	</div>
 </body>
+
 
 </html>
