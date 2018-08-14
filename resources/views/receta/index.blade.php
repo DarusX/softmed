@@ -1,37 +1,61 @@
 @extends('layouts.app') 
 @section('content')
-<div class="col-sm-12">
-    <h1>
-        <strong>Recetas</strong>
-    </h1>
-    <a href="{{route('home') }}" class="btn btn-info" role="button">Regresar</a>
-    <table class="table table-striped" id="MyTable">
-        <thead>
-            <tr>
-                <th class="text-center">Fecha</th>
-                <th class="text-center">Paciente</th>
-                <th class="text-left">Edicion</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            @foreach($recetas as $receta)
-            <tr>
-                <td class="text-center">{{ $receta->consulta->fecha }}</td>
-                <td class="text-center">{{ $receta->consulta->paciente->nombre_completo }}</td>
-                <td class="text-left">
-                <a href="{{ route('receta.edit', $receta)}}" class="btn btn-xs btn-default"><i class="fas fa-pencil-alt"></i></a>
-                <a href="" data-target="#modal-delete-{{$receta->id}}" data-toggle="modal" class="btn btn-xs btn-default"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-@endsection
+<div class="page">
+    @include('layouts.navbar')
+    <div class="page-content d-flex align-items-stretch">
+        <!-- Side Navbar -->
+        @include('layouts.sidebar')
+        <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+                <div class="container-fluid">
+                    <h2 class="no-margin-bottom">Recetas</h2>
+                </div>
+            </header>
+            <!-- Breadcrumb-->
+            <section class="tables">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center">
+                                </div>
 
-@section('scripts')
-<script> 
-  $(".table").DataTable();
-</script>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Paciente</th>
+                                                    <th>Fecha</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($recetas as $receta)
+                                                <tr>
+                                                    <td>{{ $receta->consulta->paciente->nombreCompleto }}</td>
+                                                    <td>{{ $receta->consulta->fecha }}</td>
+                                                    <td>
+                                                        <a href="{{ route('receta.edit', $receta)}}" class="btn btn-xs btn-primary">
+                                                            <i class="fas fa-pen"></i>
+                                                        </a>
+                                                        <a href="{{ route('receta.destroy', $receta)}}" class="btn btn-xs btn-danger destroy">
+                                                            <i class="fas fa-times"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
 @endsection
