@@ -40,7 +40,8 @@ Route::group(['middleware' => 'auth'], function(){
 		'nota'=>'NotaController',
 		'receta'=>'RecetaController',
 		'receta_medicamento'=>'Receta_MedicamentoController',
-		'usuario' => 'UsuarioController'
+		'usuario' => 'UsuarioController',
+		'scheduler' => 'SchedulerController'
 	]);
 	Route::resource('usuario', 'UsuarioController', [
 		'except' => [

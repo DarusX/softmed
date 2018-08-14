@@ -27,7 +27,7 @@
 
             </ul>
         </li>
-    <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
+    <li><a href="{{route('scheduler.index')}}"> <i class="icon-interface-windows"></i>Planificador </a></li>
     </ul>
     @endif
     

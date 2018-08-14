@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class consulta extends Model {
 
@@ -30,11 +31,6 @@ class consulta extends Model {
 		return $this->belongsTo(hora::class, "hora_id", "id");
 	}
 
-	public function getFecha_HoraAttribute(){
-		$dateTime = Carbon::parse($this->fecha, hora);
-		return($dateTime);
-	}
-
 	public function getStartDateAttribute()
 	{
 		return $this->fecha . ' ' . $this->hora->hora;
@@ -42,7 +38,7 @@ class consulta extends Model {
 	
 	public function getEndDateAttribute()
 	{
-		return $this->fecha . ' ' . $this->hora->hora;
+		return $this->fecha . ' ' . DB::table('horas')->select(DB::raw('(hora + INTERVAL 15 MINUTE) AS hora'))->where('id', $this->hora_id)->first()->hora;
 	}
 
 	public function getTextAttribute()
